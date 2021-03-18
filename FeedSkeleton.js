@@ -1,5 +1,14 @@
 import React from "react";
-import { View, Text, ImageBackground } from "react-native";
+import {
+  View,
+  Text,
+  ImageBackground,
+  Dimensions,
+  ScrollView,
+  StyleSheet,
+  FlatList,
+  TouchableOpacity,
+} from "react-native";
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -8,209 +17,275 @@ import {
 } from "react-native-responsive-screen";
 import ShimmerPlaceholder from "react-native-shimmer-placeholder";
 
+const windowWidth = Dimensions.get("screen").width;
+const windowHeight = Dimensions.get("screen").height;
+const dummyData = [1, 2, 3, 4, 5, 6, 7];
 const FeedSkeleton = () => {
   return (
-    <View>
-      <ShimmerPlaceholder
-        shimmerColors={["#ebebeb", "#c5c5c5", "#ebebeb", "#c5c5c5"]}
-        location={[0.3, 0.5, 0.7, 1]}
-        style={{
-          borderRadius: hp("3%"),
-          marginVertical: hp("2%"),
-          overflow: "hidden",
-          alignSelf: "center",
-          backgroundColor: "#000",
-          width: wp("90%"),
-          height: hp("32%"),
-        }}
-        autoRun
-        visible={false}>
-        <ImageBackground
-          style={[
-            {
-              borderRadius: hp("3%"),
-              marginVertical: hp("2%"),
-              overflow: "hidden",
-              alignSelf: "center",
-              backgroundColor: "#000",
-              width: wp("90%"),
-              height: hp("32%"),
-            },
-          ]}></ImageBackground>
-      </ShimmerPlaceholder>
+    <>
+    <View style={{ height:'100%',width:'100%' }}>
+    
+      <ScrollView contentContainerStyle={{ backgroundColor: '#fff'}} nestedScrollEnabled={false}>
+        <ShimmerPlaceholder
+          //  shimmerColors={["#ebebeb", "#c5c5c5", "#ebebeb", "#c5c5c5"]}
+          //location={[0.3, 0.5, 0.7, 1]}
+          style={{
+            overflow: "hidden",
+            backgroundColor: "#000",
+            width: wp(100),
+            height: hp(100),
+          }} />
 
-      <View
-        style={[
-          {
-            justifyContent: "space-between",
-            marginTop: hp("-18%"),
-            width: wp("80%"),
-            alignSelf: "center",
-          },
-        ]}>
-        <View
-          style={{
-            height: hp("4%"),
-            justifyContent: "flex-start",
-            flexDirection: "row",
-            marginHorizontal: wp("2%"),
-            alignItems: "flex-start",
-          }}>
-          <ShimmerPlaceholder
-            shimmerColors={["#ebebeb", "#c5c5c5", "#ebebeb", "#c5c5c5"]}
-            location={[0.3, 0.5, 0.7, 1]}
-            style={{
-              height: "100%",
-              width: "30%",
-              flexDirection: "row",
-              paddingHorizontal: wp("2%"),
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-            autoRun
-            visible={false}>
-            <Text>Text</Text>
-          </ShimmerPlaceholder>
-          <ShimmerPlaceholder
-            shimmerColors={["#ebebeb", "#c5c5c5", "#ebebeb", "#c5c5c5"]}
-            location={[0.3, 0.5, 0.7, 1]}
-            style={{
-              height: "100%",
-              width: "30%",
-              marginLeft: wp("2%"),
-              flexDirection: "row",
-              paddingHorizontal: wp("2%"),
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-            autoRun
-            visible={false}>
-            <Text>Text</Text>
-          </ShimmerPlaceholder>
+        {/* hoizontal carousal */}
+        <View style={styles.owlCraousel}>
+          <FlatList
+            horizontal
+            data={dummyData}
+            keyExtractor={(item) => item.toString()}
+            renderItem={({ item, index }) => (
+              <ShimmerPlaceholder 
+              speed={2000} style={styles.effect} />
+            )}
+          />
         </View>
-        <View
-          style={{
-            backgroundColor: "#fff",
-            borderRadius: hp("1.5%"),
-            elevation: 5,
-            zIndex: 1000,
-            shadowColor: "#000",
-            shadowOpacity: 0.1,
-            shadowOffset: { x: 0, y: 0 },
-            borderColor: "#ddd",
-            marginTop: hp("2%"),
-            padding: hp("1%"),
-          }}>
-          <View
-            style={{
-              alignItems: "flex-start",
-              paddingHorizontal: hp("1%"),
-              overflow: "hidden",
-              paddingVertical: hp("1%"),
-              flexDirection: "row",
-              minHeight: hp("5%"),
-            }}>
-            <ShimmerPlaceholder
-              shimmerColors={["#ebebeb", "#c5c5c5", "#ebebeb", "#c5c5c5"]}
-              location={[0.3, 0.5, 0.7, 1]}
-              style={{ width: "60%", height: hp("4%") }}
-              autoRun
-              visible={false}>
-              <Text style={{ fontSize: hp("2.5%"), textAlign: "left" }}>name of promotion</Text>
-            </ShimmerPlaceholder>
-            <ShimmerPlaceholder
-              shimmerColors={["#ebebeb", "#c5c5c5", "#ebebeb", "#c5c5c5"]}
-              location={[0.3, 0.5, 0.7, 1]}
-              style={{
-                flexDirection: "row",
-                height: hp("4%"),
-                width: "40%",
-                justifyContent: "space-between",
-                alignItems: "center",
-                overflow: "hidden",
-              }}
-              autoRun
-              visible={false}></ShimmerPlaceholder>
-          </View>
-          <View style={{ flexDirection: "row", paddingHorizontal: hp("1%"), marginVertical: hp("1%") }}>
-            <ShimmerPlaceholder
-              shimmerColors={["#ebebeb", "#c5c5c5", "#ebebeb", "#c5c5c5"]}
-              location={[0.3, 0.5, 0.7, 1]}
-              style={{ height: hp("3%"), width: "100%" }}
-              autoRun
-              visible={false}></ShimmerPlaceholder>
-          </View>
-          <View style={{ flexDirection: "row", paddingHorizontal: hp("1%"), marginVertical: hp("1%") }}>
-            <ShimmerPlaceholder
-              shimmerColors={["#ebebeb", "#c5c5c5", "#ebebeb", "#c5c5c5"]}
-              location={[0.3, 0.5, 0.7, 1]}
-              style={{ height: hp("6%"), width: "100%" }}
-              autoRun
-              visible={false}></ShimmerPlaceholder>
-          </View>
+
+        <View style={[styles.tripsListCraousel, { justifyContent: "space-around" ,width: windowWidth}]}>
+          {/* Title Row */}
           <View
             style={{
               flexDirection: "row",
-              paddingHorizontal: hp("1%"),
+              alignItems: 'center',
               justifyContent: "space-between",
-              marginVertical: hp("1%"),
-              alignItems: "flex-end",
+              width: "96%", 
             }}>
-            <View style={{ flexDirection: "row", alignItems: "center", width: "60%" }}>
-              <ShimmerPlaceholder
-                shimmerColors={["#ebebeb", "#c5c5c5", "#ebebeb", "#c5c5c5"]}
-                location={[0.3, 0.5, 0.7, 1]}
-                style={{ width: "40%" }}
-                autoRun
-                visible={false}>
-                {/* <Text style={[styles.fontFamilysemiBold, { fontSize: hp('1.8%'), }]}>{`${item?.Quantity}`} Left  </Text> */}
-              </ShimmerPlaceholder>
-              <ShimmerPlaceholder
-                shimmerColors={["#ebebeb", "#c5c5c5", "#ebebeb", "#c5c5c5"]}
-                location={[0.3, 0.5, 0.7, 1]}
-                style={{ justifyContent: "center", width: "60%", marginLeft: 4, backgroundColor: "#F6F6F5" }}
-                autoRun
-                visible={false}>
-                {/* <View style={{ backgroundColor: '#E16C38', width: `${((item.Quantity) * 100) / item.StartingQuantity}%`, borderRadius: hp('6.7%'), borderWidth: hp('0.3%'), borderColor: '#E16C38' }} /> */}
-              </ShimmerPlaceholder>
+            <View style={{width: wp(80)}}>
+              <Text style={{ fontWeight: "bold", fontSize: hp(4),color: '#444444' }}>Our best promotion trips</Text>
             </View>
-            <View style={{ flexDirection: "row", alignItems: "flex-end", width: "30%", justifyContent: "flex-end" }}>
-              <ShimmerPlaceholder
-                shimmerColors={["#ebebeb", "#c5c5c5", "#ebebeb", "#c5c5c5"]}
-                location={[0.3, 0.5, 0.7, 1]}
-                autoRun
-                visible={false}
-                style={{
-                  alignItems: "center",
-                  marginLeft: hp("1%"),
-                  width: "40%",
-                  paddingHorizontal: wp("2%"),
-                  paddingVertical: hp("0.3%"),
-                  justifyContent: "center",
-                }}>
-                <Text style={[, { fontSize: hp("2.5%"), fontFamily: "montserrat-bold", color: "#fff" }]}>sdsds</Text>
-              </ShimmerPlaceholder>
-              <ShimmerPlaceholder
-                shimmerColors={["#ebebeb", "#c5c5c5", "#ebebeb", "#c5c5c5"]}
-                location={[0.3, 0.5, 0.7, 1]}
-                autoRun
-                visible={false}
-                style={{
-                  alignItems: "center",
-                  marginLeft: hp("1%"),
-                  width: "40%",
-                  paddingHorizontal: wp("2%"),
-                  paddingVertical: hp("0.3%"),
-                  justifyContent: "center",
-                }}>
-                <Text style={[, { fontSize: hp("2.5%"), fontFamily: "montserrat-bold", color: "#fff" }]}>sdsds</Text>
-              </ShimmerPlaceholder>
-            </View>
+            <TouchableOpacity  onPress={() => {}}>
+              <Text style={{ fontWeight: "bold", fontSize: 12 ,color : '#000', marginBottom: hp(2.8)}}>View All</Text>
+            </TouchableOpacity>
+          </View>
+          {/* hoizontal carousal */}
+   
+            <FlatList
+              horizontal
+              data={dummyData}
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={{alignItems:'center'}}
+              keyExtractor={(item) => item.toString()}
+              renderItem={({ item, index }) => (
+                <View
+                  style={[
+                    {
+                      marginRight: 30,
+                      width: wp(75),
+                      height: hp(33.3),
+                      borderRadius: 15,
+                      overflow:'hidden', 
+                      backgroundColor: "white",
+                      shadowColor: "#000",
+                      shadowOffset: {
+                        width: 0,
+                        height: 1,
+                      },
+                      shadowOpacity: 0.2,
+                      shadowRadius: 1.41,
+                      elevation: 3, 
+                    
+                    },
+                  ]}>
+                  <View
+                    style={{
+                      height: "77%",
+                      width: "100%",
+                    }}>
+                    <ShimmerPlaceholder
+                      style={{
+                        height: "100%",
+                        width: "100%",
+                      }}
+                    />
+                  </View>
+                  <View
+                    style={{
+                      height: "23%",
+                      width: "100%",
+                      justifyContent: "center",
+                    }}>
+                   <ShimmerPlaceholder style= {{position: 'absolute', top: wp(2), left: wp(2.5), fontSize : wp(5)}} />
+                   
+                    {/* <ShimmerPlaceholder style={{ height: 20, width: "60%" }} /> */}
+                  </View>
+                </View>
+              )}
+            />
+          </View>
+     
+
+        <View style={[styles.tripsListCraousel, { height:hp(39), justifyContent: "space-around",width: windowWidth, }]}>
+           
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: 'flex-end',
+              justifyContent: "space-between",
+              width: "96%",
+            }}>
+            <Text style={{ fontWeight: "bold", fontSize: hp(4),color: '#444444' }}>Our best promotion</Text>
+            <TouchableOpacity  onPress={() => {}}>
+              <Text style={{ fontWeight: "bold", fontSize: 12,color : '#000' , marginBottom: hp(1)}}>View All</Text>
+            </TouchableOpacity>
+          </View> 
+          <View style={[{  alignItems: "center" }]}>
+            <FlatList
+              horizontal
+              data={dummyData}
+              keyExtractor={(item) => item.toString()}
+              renderItem={({ item, index }) => (
+                <View
+                  style={[
+                    {
+                      marginRight: 30,
+                      width: wp(75),
+                      height: hp(30),
+                      borderRadius: 15,
+                      marginTop:hp(3),
+                      overflow: "hidden",
+                      backgroundColor: "white",
+                      shadowColor: "#000",
+                      shadowOffset: {
+                        width: 0,
+                        height: 1,
+                      },
+                      shadowOpacity: 0.2,
+                      shadowRadius: 1.41,
+                      elevation: 3,
+                      marginBottom: wp(2)
+                    },
+                  ]}>
+                  <View
+                    style={{
+                      height: "87%",
+                      width: "100%",
+                    }}>
+                    <ShimmerPlaceholder
+                      style={{
+                        height: "100%",
+                        width: "100%",
+                      }}
+                    />
+                  </View>
+                  <View
+                    style={{
+                      height: "13%",
+                      width: "100%",
+                      justifyContent: "center",
+                    }}>
+                      <ShimmerPlaceholder style= {{position: 'absolute', top: wp(2), left: wp(2.5), fontSize : wp(5)}} />
+                    {/* <ShimmerPlaceholder speed={2000}>
+                      <View style={{ height: 30, width: "60%" }} />
+                    </ShimmerPlaceholder> */}
+                  </View>
+                </View>
+              )}
+            />
           </View>
         </View>
-      </View>
+
+         <View style={[styles.blogCraousel, { height: hp(65), paddingTop: hp(3), marginTop: hp(4) }]}>
+       
+          <View style={{}}>
+            <Text
+              style={{
+                fontWeight: "bold",
+                fontSize: 20,
+                color: "white",
+              }}>
+              Read the latest from blog
+            </Text>
+          </View> 
+          <View style={[{  marginBottom: "5%", marginTop: wp(1) }]}>
+            <FlatList
+              horizontal
+              data={dummyData}
+              keyExtractor={(item) => item.toString()}
+              renderItem={({ item, index }) => (
+                <View
+                  style={[
+                    {
+                      marginRight: 10,
+                      width: wp(77),
+                      height: hp(44),
+                      borderRadius: 15,
+                      overflow: "hidden",
+                      backgroundColor: "white",
+                      marginBottom: hp(4.9)
+                    },
+                  ]}>
+                  <View
+                    style={{
+                      height: "60%",
+                      width: wp(100),
+                    }}>
+                    <ShimmerPlaceholder
+                      style={{
+                        height: "100%",
+                        width: "100%",
+                      }}
+                    />
+                  </View>
+                  <View
+                    style={{
+                      height: "40%",
+                      width: "100%",  
+                    }}>
+                    <ShimmerPlaceholder style={{ height: hp(3), width: "60%", marginLeft: wp(3) ,marginTop: wp(4)}} />
+                    
+                    <ShimmerPlaceholder style={{ height: hp(2), width: "100%", marginLeft: wp(3),marginTop: wp(4) }} />
+                  </View>
+                </View>
+              )}
+            />
+          </View> 
+        </View>
+        
+      </ScrollView>
+      
     </View>
+    
+    </>
   );
 };
 
 export default FeedSkeleton;
+
+const styles = StyleSheet.create({
+  owlCraousel: {
+    width: wp(97),
+    height: wp(47),
+    paddingTop:wp(9), 
+    justifyContent: 'space-around'
+  },
+  effect: {
+    width: wp(30),
+    height: wp(34),
+    backgroundColor:'white',
+    marginLeft: wp(4.5),
+    borderRadius: 15,
+    overflow: 'hidden'
+  },
+  tripsListCraousel: {
+    paddingLeft: "5%",
+    width: "100%",
+    height: hp(48),
+    marginTop: hp(1.5)
+  },
+  blogCraousel: {
+    backgroundColor: "black",
+    paddingHorizontal: "5%",
+    width: "100%",
+    justifyContent:'space-around',
+    paddingVertical: 6.5,
+  },
+
+});
