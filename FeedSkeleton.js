@@ -16,38 +16,44 @@ import {
   removeOrientationListener as rol,
 } from "react-native-responsive-screen";
 import ShimmerPlaceholder from "react-native-shimmer-placeholder";
+import * as Animatable from 'react-native-animatable';
 
 const windowWidth = Dimensions.get("screen").width;
 const windowHeight = Dimensions.get("screen").height;
 const dummyData = [1, 2, 3, 4, 5, 6, 7];
-const FeedSkeleton = () => {
+const positionX = null;
+const FeedSkeleton = (props) => {
+  const {returnYalue}=props
   return (
-    <>
-    <View style={{ height:'100%',width:'100%' }}>
+    <> 
+    <View style={{ height:hp(100),width:wp(100) }}>
     
-      <ScrollView contentContainerStyle={{ backgroundColor: '#fff'}} nestedScrollEnabled={false}>
-        <ShimmerPlaceholder
-          //  shimmerColors={["#ebebeb", "#c5c5c5", "#ebebeb", "#c5c5c5"]}
-          //location={[0.3, 0.5, 0.7, 1]}
+      <ScrollView onScroll={(el)=>returnYalue(el.nativeEvent.contentOffset.y)} contentContainerStyle={{ backgroundColor: '#fff'}} nestedScrollEnabled={false}>
+        
+        <Animatable.View animation='slideInRight'
+        duration={700}>
+        <ShimmerPlaceholder  
           style={{
             overflow: "hidden",
             backgroundColor: "#000",
             width: wp(100),
             height: hp(100),
-          }} />
-
+          }} /> 
+        </Animatable.View>
         {/* hoizontal carousal */}
-        <View style={styles.owlCraousel}>
+        <Animatable.View
+        animation='slideInRight'
+        duration={700} style={styles.owlCraousel}>
           <FlatList
             horizontal
             data={dummyData}
             keyExtractor={(item) => item.toString()}
             renderItem={({ item, index }) => (
               <ShimmerPlaceholder 
-              speed={2000} style={styles.effect} />
+              speed={700} style={styles.effect} />
             )}
           />
-        </View>
+        </Animatable.View>
 
         <View style={[styles.tripsListCraousel, { justifyContent: "space-around" ,width: windowWidth}]}>
           {/* Title Row */}
@@ -74,7 +80,9 @@ const FeedSkeleton = () => {
               contentContainerStyle={{alignItems:'center'}}
               keyExtractor={(item) => item.toString()}
               renderItem={({ item, index }) => (
-                <View
+                <Animatable.View
+                animation='slideInRight'
+                duration={700}
                   style={[
                     {
                       marginRight: 30,
@@ -116,7 +124,7 @@ const FeedSkeleton = () => {
                    
                     {/* <ShimmerPlaceholder style={{ height: 20, width: "60%" }} /> */}
                   </View>
-                </View>
+                </Animatable.View>
               )}
             />
           </View>
@@ -142,7 +150,9 @@ const FeedSkeleton = () => {
               data={dummyData}
               keyExtractor={(item) => item.toString()}
               renderItem={({ item, index }) => (
-                <View
+                <Animatable.View
+                animation='slideInRight'
+                duration={700}
                   style={[
                     {
                       marginRight: 30,
@@ -182,11 +192,11 @@ const FeedSkeleton = () => {
                       justifyContent: "center",
                     }}>
                       <ShimmerPlaceholder style= {{position: 'absolute', top: wp(2), left: wp(2.5), fontSize : wp(5)}} />
-                    {/* <ShimmerPlaceholder speed={2000}>
+                    {/* <ShimmerPlaceholder speed={700}>
                       <View style={{ height: 30, width: "60%" }} />
                     </ShimmerPlaceholder> */}
                   </View>
-                </View>
+                </Animatable.View>
               )}
             />
           </View>
@@ -210,7 +220,9 @@ const FeedSkeleton = () => {
               data={dummyData}
               keyExtractor={(item) => item.toString()}
               renderItem={({ item, index }) => (
-                <View
+                <Animatable.View
+                animation='slideInRight'
+                duration={700}iew
                   style={[
                     {
                       marginRight: 10,
@@ -243,7 +255,7 @@ const FeedSkeleton = () => {
                     
                     <ShimmerPlaceholder style={{ height: hp(2), width: "100%", marginLeft: wp(3),marginTop: wp(4) }} />
                   </View>
-                </View>
+                </Animatable.View>
               )}
             />
           </View> 
