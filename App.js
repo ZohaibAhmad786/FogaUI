@@ -13,6 +13,7 @@ import  TryAgain from './components/TryAgain';
 import { FontAwesome, FontAwesome5, MaterialCommunityIcons } from "@expo/vector-icons";
 import * as Animatable from 'react-native-animatable';
 import ViewAllTrips from "./ViewAllTrips";
+import * as Notifications from 'expo-notifications';
 
 // import ViewAllTrips from "./ViewAllTrips";
 const App = () => { 
