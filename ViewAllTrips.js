@@ -21,14 +21,15 @@ import {
   const windowHeight = Dimensions.get("screen").height;
   const dummyData = [1, 2, 3, 4, 5, 6, 7];
 
-const ViewAllTrips = () => {
+const ViewAllTrips = (props) => {
+  const {canGoForward}=props
     return (
         <>
         <View style={{ height: hp(100),width: wp(100) }} >
     
     <ScrollView contentContainerStyle={{ backgroundColor: 'white',  paddingVertical: hp(4)}} nestedScrollEnabled={false} >
        
-    <Animatable.View animation='slideInRight'
+    <Animatable.View animation={canGoForward? "slideInLeft": "slideInRight"}
         duration={300}>
         <ShimmerPlaceholder  
           style={{
@@ -44,14 +45,15 @@ const ViewAllTrips = () => {
 
         {/* vertical trips list */}
         <Animatable.View
-        animation='slideInRight'
-        duration={300}>
+        animation={canGoForward? "slideInLeft": "slideInRight"}
+        duration={300} 
+        style={{marginTop: hp(40),}}>
           <FlatList 
             data={dummyData}
             showsVerticalScrollIndicator={false} 
             keyExtractor={(item) => item.toString()}
             renderItem={({ item, index }) => (
-              <View style = {{width: wp(90),height:hp(24), backgroundColor: 'white', marginVertical: hp(1.9), 
+              <View style = {{width: wp(90),height:hp(26.5), backgroundColor: 'white', marginVertical: hp(1.9), 
               alignSelf: 'center', borderRadius: hp(2),flexDirection: 'row',
               shadowColor: "#000", shadowOffset: { width: 0,height: 1,},
               shadowOpacity: 0.2,shadowRadius: 1.41,elevation: 3, alignItems: 'center' }}>

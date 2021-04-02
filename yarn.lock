@@ -5240,18 +5240,6 @@ react-native-linear-gradient@^2.5.6:
   resolved "https://registry.yarnpkg.com/react-native-linear-gradient/-/react-native-linear-gradient-2.5.6.tgz#96215cbc5ec7a01247a20890888aa75b834d44a0"
   integrity sha512-HDwEaXcQIuXXCV70O+bK1rizFong3wj+5Q/jSyifKFLg0VWF95xh8XQgfzXwtq0NggL9vNjPKXa016KuFu+VFg==
 
-react-native-onesignal@^4.0.5:
-  version "4.0.5"
-  resolved "https://registry.yarnpkg.com/react-native-onesignal/-/react-native-onesignal-4.0.5.tgz#d3a3b23b401e8e1f065d9af0941f6f26f21018e5"
-  integrity sha512-clDuRYKuyiMRBizgCN9EqyLWpZhVJPgcl9o7SCRUokot1Cg3Lsh1IMdpzqKh4HfPKaoj3sYC0XQtWAn9OhBw3w==
-  dependencies:
-    invariant "^2.2.2"
-
-react-native-push-notification@^7.2.3:
-  version "7.2.3"
-  resolved "https://registry.yarnpkg.com/react-native-push-notification/-/react-native-push-notification-7.2.3.tgz#e5efa0d48bfa27ad0cab538ba859b5f2cd21b684"
-  integrity sha512-MWwzGXGD22vQ35roDWBQ4EJl1jS4kuuAAdxqe2C88gULgzT6rQkR9wszl5b5K+hIWqve50qg4zJoSgarr//2KA==
-
 react-native-responsive-screen@^1.4.2:
   version "1.4.2"
   resolved "https://registry.yarnpkg.com/react-native-responsive-screen/-/react-native-responsive-screen-1.4.2.tgz#45280826d24f9accbfdf46a36cb8e6d780f76f28"

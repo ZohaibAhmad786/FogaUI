@@ -23,14 +23,14 @@ const windowHeight = Dimensions.get("screen").height;
 const dummyData = [1, 2, 3, 4, 5, 6, 7];
 const positionX = null;
 const FeedSkeleton = (props) => {
-  const {returnYalue}=props
+  const {returnYalue,canGoForward}=props
   return (
     <> 
     <View style={{ height:hp(100),width:wp(100) }}>
     
       <ScrollView onScroll={(el)=>returnYalue(el.nativeEvent.contentOffset.y)} contentContainerStyle={{ backgroundColor: '#fff'}} nestedScrollEnabled={false}>
         
-        <Animatable.View animation='slideInRight'
+        <Animatable.View animation={canGoForward? "slideInLeft": "slideInRight"}
         duration={700}>
         <ShimmerPlaceholder  
           style={{
@@ -42,7 +42,7 @@ const FeedSkeleton = (props) => {
         </Animatable.View>
         {/* hoizontal carousal */}
         <Animatable.View
-        animation='slideInRight'
+        animation={canGoForward? "slideInLeft": "slideInRight"}
         duration={700} style={styles.owlCraousel}>
           <FlatList
             horizontal
@@ -81,7 +81,7 @@ const FeedSkeleton = (props) => {
               keyExtractor={(item) => item.toString()}
               renderItem={({ item, index }) => (
                 <Animatable.View
-                animation='slideInRight'
+                animation={canGoForward? "slideInLeft": "slideInRight"}
                 duration={700}
                   style={[
                     {
@@ -151,7 +151,7 @@ const FeedSkeleton = (props) => {
               keyExtractor={(item) => item.toString()}
               renderItem={({ item, index }) => (
                 <Animatable.View
-                animation='slideInRight'
+                animation={canGoForward? "slideInLeft": "slideInRight"}
                 duration={700}
                   style={[
                     {
@@ -221,7 +221,7 @@ const FeedSkeleton = (props) => {
               keyExtractor={(item) => item.toString()}
               renderItem={({ item, index }) => (
                 <Animatable.View
-                animation='slideInRight'
+                animation={canGoForward? "slideInLeft": "slideInRight"}
                 duration={700}iew
                   style={[
                     {
