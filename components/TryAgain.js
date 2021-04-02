@@ -18,12 +18,7 @@ const TryAgain = (props) => {
             <Text style={styles.titleLabel}>Connection is lost</Text>
             <Text style={styles.msgLabel}>Please check your network settings</Text>
           </View>
-          <LinearGradient
-            colors={["#68DDF1", "#1D7583"]}
-            start={{ x: 0.1, y: 0.25 }}
-            end={{ x: 0.3, y: 3 }}
-            locations={[0, 0.6]}
-            style={styles.btnContainer}>
+          <LinearGradient colors={["#68DDF1", "#1D7583"]} start={{ x: 0.1, y: 0.25 }} end={{ x: 0.3, y: 3 }} locations={[0, 0.6]} style={styles.btnContainer}>
             <TouchableOpacity onPress={() => reloadPage()}>
               <Text style={{ fontWeight: "bold", color: "#fff" }}>Try Again</Text>
             </TouchableOpacity>
