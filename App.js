@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   View,
   Text,
@@ -10,10 +10,13 @@ import {
   Alert,
   StyleSheet,
   TouchableOpacity,
+  ImageBackground,
   RecyclerViewBackedScrollView,
+  Share,Button
 } from "react-native";
 import { WebView } from "react-native-webview";
 import { BackHandler } from "react-native";
+import { Linking } from "react-native";
 import FeedSkeleton from "./FeedSkeleton";
 import {
   widthPercentageToDP as wp,
@@ -60,6 +63,33 @@ const App = () => {
       BackHandler.removeEventListener("hardwareBackPress", onAndroidBackPress);
     };
   }, []);
+
+  const [splash, setSplash] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setSplash((state) => !state);
+    }, 3000);
+  }, []);
+  const onShare = async () => {
+    try {
+      const result = await Share.share({
+        message:
+          'React Native | A framework for building native apps using React',
+      });
+      if (result.action === Share.sharedAction) {
+        if (result.activityType) {
+          // shared with activity type of result.activityType
+        } else {
+          // shared
+        }
+      } else if (result.action === Share.dismissedAction) {
+        // dismissed
+      }
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
   return (
     <SafeAreaView style={{ flex: 1, justifyContent: "center", marginTop: StatusBar.currentHeight }}>
       <WebView
@@ -68,6 +98,14 @@ const App = () => {
           console.log(navState.url);
           setCanGoForward(!navState.canGoForward);
           setLink(navState.url);
+          //Linking.openURL(navState.url)
+        }}
+      
+        onMessage={(event) => {
+          const message = event.nativeEvent.data;
+          message = JSON.parse(message)
+          Linking.openURL('https://www.facebook.com/');
+          console.log(message)
         }}
         ref={webviewRef}
         onLoadStart={(syntheticEvent) => {
@@ -88,7 +126,7 @@ const App = () => {
         javaScriptEnabled={true}
         scalesPageToFit={true}
         injectedJavaScript={INJECTEDJAVASCRIPT}
-        userAgent="custom"
+        userAgent="Excelorithm"
         cacheEnabled={true}
         //cacheMode='LOAD_CACHE_ELSE_NETWORK'
         renderError={() => <TryAgain reloadPage={() => reloadPage()} />}
@@ -111,8 +149,9 @@ const App = () => {
             <ViewAllTrips canGoForward={canGoForward} />
           ) : link === "https://foga.app/tour" ? (
             <ViewAll canGoForward={canGoForward} />
-          ) : link === "https://foga.app/trip/hilton-beach-resort" ? (
-            <Trip canGoForward={canGoForward} />
+          ) : link === "https://foga.app/trip/egaila-beach" ? (//https://foga.app/trip/hilton-beach-resort
+            //<Trip canGoForward={canGoForward} /> 
+         <Button onPress={onShare} title="Share" />
           ) : link === "https://foga.app/tour/fahaheel-sea-club" ? (
             <Tour canGoForward={canGoForward} />
           ) : link.startsWith("https://foga.app/news/") ? (
@@ -126,7 +165,7 @@ const App = () => {
               zIndex: 1000,
               backgroundColor: "#fff",
               height: hp(9),
-              width: wp(88),
+              width: wp(69),
               bottom: hp(4),
               alignSelf: "center",
               borderRadius: 40,
@@ -144,16 +183,16 @@ const App = () => {
               onPress={() => {}}>
               <FontAwesome5 name="search" color="#444" size={wp(5)} />
             </TouchableOpacity>
-            <TouchableOpacity
-              style={{
-                justifyContent: "center",
-                alignItems: "center",
-                width: "20%",
-                height: "100%",
-              }}
-              onPress={() => {}}>
-              <FontAwesome name="heart" color="#444" size={wp(5)} />
-            </TouchableOpacity>
+            {/* <TouchableOpacity
+                  style={{
+                    justifyContent: "center",
+                    alignItems: "center",
+                    width: "20%",
+                    height: "100%",
+                  }}
+                  onPress={() => {}}>
+                  <FontAwesome name="heart" color="#444" size={wp(5)} />
+                </TouchableOpacity> */}
             <TouchableOpacity
               style={{
                 justifyContent: "center",
@@ -187,11 +226,20 @@ const App = () => {
           </View>
         </View>
       )}
-      {/* <ViewAllTrips />  */}
+      {/* <ImageBackground  
+        source={require('./assets/logo.png')}
+        resizeMode="cover"
+        style={{
+          height: '100%',
+          width: '100%',
+        }}>  */}
+      {/* <ViewAllTrips />    */}
       {/* <ViewAll /> */}
       {/* <Trip /> */}
       {/* <Tour /> */}
       {/* <Blog /> */}
+
+      {/* </ImageBackground>   */}
     </SafeAreaView>
   );
 };

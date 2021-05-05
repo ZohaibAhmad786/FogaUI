@@ -39,7 +39,32 @@ const ViewAll = (props) => {
             borderRadius: hp(1.5),
             marginLeft: wp(5),
             justifyContent: 'center',
-            marginBottom: hp(3)
+            marginBottom: hp(6.5)
+          }} /> 
+        </Animatable.View>
+
+        <Animatable.View animation={canGoForward? "slideInLeft": "slideInRight"}
+        duration={300}>
+        <ShimmerPlaceholder  
+          style={{
+            backgroundColor: "blue",
+            width: wp(43),
+            height: hp(4), 
+            marginLeft: wp(5),
+            justifyContent: 'center',
+            marginBottom: hp(1)
+          }} /> 
+        </Animatable.View>
+        <Animatable.View animation={canGoForward? "slideInLeft": "slideInRight"}
+        duration={300}>
+        <ShimmerPlaceholder  
+          style={{
+            backgroundColor: "blue",
+            width: wp(61),
+            height: hp(3.8), 
+            marginLeft: wp(5),
+            justifyContent: 'center',
+           // marginBottom: hp(3)
           }} /> 
         </Animatable.View>
 
@@ -47,7 +72,8 @@ const ViewAll = (props) => {
         <Animatable.View
         animation={canGoForward? "slideInLeft": "slideInRight"}
         duration={300} 
-        style={{marginTop: hp(43.7),}}>
+        style={{marginTop: hp(-1),
+        }}>
           <FlatList 
             data={dummyData}
             showsVerticalScrollIndicator={false} 

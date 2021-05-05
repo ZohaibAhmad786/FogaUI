@@ -47,7 +47,7 @@ const ViewAllTrips = (props) => {
         <Animatable.View
         animation={canGoForward? "slideInLeft": "slideInRight"}
         duration={300} 
-        style={{marginTop: hp(40),}}>
+        style={{marginTop: hp(1),}}>
           <FlatList 
             data={dummyData}
             showsVerticalScrollIndicator={false} 

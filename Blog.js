@@ -40,7 +40,7 @@ const Blog = (props) => {
           </Animatable.View>
           <View
             style={{
-              height: hp(11),
+              height: hp(8.5),
               width: hp(100),
               backgroundColor: "white",
               flexDirection: "row", 
