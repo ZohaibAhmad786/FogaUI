@@ -183,16 +183,7 @@ const App = () => {
               onPress={() => {}}>
               <FontAwesome5 name="search" color="#444" size={wp(5)} />
             </TouchableOpacity>
-            {/* <TouchableOpacity
-                  style={{
-                    justifyContent: "center",
-                    alignItems: "center",
-                    width: "20%",
-                    height: "100%",
-                  }}
-                  onPress={() => {}}>
-                  <FontAwesome name="heart" color="#444" size={wp(5)} />
-                </TouchableOpacity> */}
+            
             <TouchableOpacity
               style={{
                 justifyContent: "center",
