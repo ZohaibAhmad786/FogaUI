@@ -73,10 +73,10 @@ const App = () => {
       setSplash((state) => !state);
     }, 3000);
   }, []);
-  const onShare = async () => {
+  const onShare = async (url) => {
     try {
       const result = await Share.share({
-        message: "React Native | A framework for building native apps using React",
+        message: url,
       });
       if (result.action === Share.sharedAction) {
         if (result.activityType) {
@@ -104,9 +104,13 @@ const App = () => {
         }}
         onMessage={(event) => {
           const message = event.nativeEvent.data;
-          message = JSON.parse(message);
-          Linking.openURL("https://www.facebook.com/");
-          console.log(message);
+          console.log(JSON.parse(message));
+          if (JSON.parse(message)?.share) {
+            onShare(JSON.parse(message)?.share);
+          }
+          // message = JSON.parse(message);
+          // Linking.openURL("https://www.facebook.com/");
+          // console.log(message);
         }}
         ref={webviewRef}
         onLoadStart={(syntheticEvent) => {
@@ -160,7 +164,7 @@ const App = () => {
           ) : (
             <Tour isEnglish={isEnglish} canGoForward={canGoForward} />
           )}
-          <View
+          {/* <View
             style={{
               position: "absolute",
               zIndex: 1000,
@@ -215,7 +219,7 @@ const App = () => {
               onPress={() => {}}>
               <FontAwesome name='user' color='#444' size={wp(5)} />
             </TouchableOpacity>
-          </View>
+          </View> */}
         </View>
       )}
       {/* <ImageBackground  
