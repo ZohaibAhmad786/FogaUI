@@ -12,7 +12,8 @@ import {
   TouchableOpacity,
   ImageBackground,
   RecyclerViewBackedScrollView,
-  Share,Button
+  Share,
+  Button,
 } from "react-native";
 import { WebView } from "react-native-webview";
 import { BackHandler } from "react-native";
@@ -40,6 +41,8 @@ const App = () => {
   const [indicator, setIndicator] = React.useState(true);
   const webviewRef = React.useRef(null);
   const [isAnimationStart, setIsAnimationStart] = React.useState(true);
+  const [isEnglish, setIsEnglish] = React.useState(true);
+
   const INJECTEDJAVASCRIPT =
     "setTimeout(() => {document.addEventListener('scroll', function (event) {window.ReactNativeWebView.postMessage(JSON.stringify(document.getElementsByClassName('topconteiner')[0].scrollTop));},true);}, 300);true;";
   // "const meta = document.createElement('meta'); meta.setAttribute('content', 'width=device-width, initial-scale=1, maximum-scale=0.99, user-scalable=0'); meta.setAttribute('name', 'viewport'); document.getElementsByTagName('head')[0].appendChild(meta); ";
@@ -70,11 +73,10 @@ const App = () => {
       setSplash((state) => !state);
     }, 3000);
   }, []);
-  const onShare = async () => {
+  const onShare = async (url) => {
     try {
       const result = await Share.share({
-        message:
-          'React Native | A framework for building native apps using React',
+        message: url,
       });
       if (result.action === Share.sharedAction) {
         if (result.activityType) {
@@ -100,12 +102,15 @@ const App = () => {
           setLink(navState.url);
           //Linking.openURL(navState.url)
         }}
-      
         onMessage={(event) => {
           const message = event.nativeEvent.data;
-          message = JSON.parse(message)
-          Linking.openURL('https://www.facebook.com/');
-          console.log(message)
+          console.log(JSON.parse(message));
+          if (JSON.parse(message)?.share) {
+            onShare(JSON.parse(message)?.share);
+          }
+          // message = JSON.parse(message);
+          // Linking.openURL("https://www.facebook.com/");
+          // console.log(message);
         }}
         ref={webviewRef}
         onLoadStart={(syntheticEvent) => {
@@ -126,7 +131,7 @@ const App = () => {
         javaScriptEnabled={true}
         scalesPageToFit={true}
         injectedJavaScript={INJECTEDJAVASCRIPT}
-        userAgent="Excelorithm"
+        userAgent='Excelorithm'
         cacheEnabled={true}
         //cacheMode='LOAD_CACHE_ELSE_NETWORK'
         renderError={() => <TryAgain reloadPage={() => reloadPage()} />}
@@ -144,22 +149,22 @@ const App = () => {
             backgroundColor: "rgba(0,0,0,0.6)",
           }}>
           {link === "https://foga.app/" ? (
-            <FeedSkeleton returnYalue={(yValue) => console.log(yValue)} />
+            <FeedSkeleton isEnglish={isEnglish} returnYalue={(yValue) => console.log(yValue)} />
           ) : link === "https://foga.app/trip" ? (
-            <ViewAllTrips canGoForward={canGoForward} />
+            <ViewAllTrips isEnglish={isEnglish} canGoForward={canGoForward} />
           ) : link === "https://foga.app/tour" ? (
-            <ViewAll canGoForward={canGoForward} />
-          ) : link === "https://foga.app/trip/egaila-beach" ? (//https://foga.app/trip/hilton-beach-resort
-            //<Trip canGoForward={canGoForward} /> 
-         <Button onPress={onShare} title="Share" />
+            <ViewAll isEnglish={isEnglish} canGoForward={canGoForward} />
+          ) : link === "https://foga.app/trip/egaila-beach" ? ( //https://foga.app/trip/hilton-beach-resort
+            //<Trip canGoForward={canGoForward} />
+            <Button onPress={onShare} title='Share' />
           ) : link === "https://foga.app/tour/fahaheel-sea-club" ? (
-            <Tour canGoForward={canGoForward} />
+            <Tour isEnglish={isEnglish} canGoForward={canGoForward} />
           ) : link.startsWith("https://foga.app/news/") ? (
-            <Blog canGoForward={canGoForward} />
+            <Blog isEnglish={isEnglish} canGoForward={canGoForward} />
           ) : (
-            <Tour canGoForward={canGoForward} />
+            <Tour isEnglish={isEnglish} canGoForward={canGoForward} />
           )}
-          <View
+          {/* <View
             style={{
               position: "absolute",
               zIndex: 1000,
@@ -181,9 +186,9 @@ const App = () => {
                 height: "100%",
               }}
               onPress={() => {}}>
-              <FontAwesome5 name="search" color="#444" size={wp(5)} />
+              <FontAwesome5 name='search' color='#444' size={wp(5)} />
             </TouchableOpacity>
-            
+
             <TouchableOpacity
               style={{
                 justifyContent: "center",
@@ -192,17 +197,7 @@ const App = () => {
                 height: "100%",
               }}
               onPress={() => {}}>
-              <MaterialCommunityIcons name="email" color="#444" size={wp(5)} />
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={{
-                justifyContent: "center",
-                alignItems: "center",
-                width: "20%",
-                height: "100%",
-              }}
-              onPress={() => {}}>
-              <FontAwesome name="bell" color="#444" size={wp(5)} />
+              <MaterialCommunityIcons name='email' color='#444' size={wp(5)} />
             </TouchableOpacity>
             <TouchableOpacity
               style={{
@@ -212,9 +207,19 @@ const App = () => {
                 height: "100%",
               }}
               onPress={() => {}}>
-              <FontAwesome name="user" color="#444" size={wp(5)} />
+              <FontAwesome name='bell' color='#444' size={wp(5)} />
             </TouchableOpacity>
-          </View>
+            <TouchableOpacity
+              style={{
+                justifyContent: "center",
+                alignItems: "center",
+                width: "20%",
+                height: "100%",
+              }}
+              onPress={() => {}}>
+              <FontAwesome name='user' color='#444' size={wp(5)} />
+            </TouchableOpacity>
+          </View> */}
         </View>
       )}
       {/* <ImageBackground  

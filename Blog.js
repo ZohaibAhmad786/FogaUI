@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  View,
-  Text,
-  Dimensions,
-  ScrollView,
-  StyleSheet,
-  FlatList,
-  TouchableOpacity,
-} from "react-native";
+import { View, Text, Dimensions, ScrollView, StyleSheet, FlatList, TouchableOpacity } from "react-native";
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -22,14 +14,12 @@ const windowHeight = Dimensions.get("screen").height;
 const dummyData = [1, 2, 3, 4, 5, 6, 7];
 const forward = true;
 const Blog = (props) => {
-    const {canGoForward}=props;
+  const { canGoForward, isEnglish } = props;
   return (
     <>
       <View style={{ height: hp(100), width: wp(100) }}>
-        <ScrollView
-          contentContainerStyle={{ backgroundColor: "white" }}
-          nestedScrollEnabled={false}>
-          <Animatable.View  animation={canGoForward? "slideInLeft": "slideInRight"} duration={300}>
+        <ScrollView contentContainerStyle={{ backgroundColor: "white" }} nestedScrollEnabled={false}>
+          <Animatable.View animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"} duration={300}>
             <ShimmerPlaceholder
               style={{
                 width: wp(100),
@@ -43,7 +33,7 @@ const Blog = (props) => {
               height: hp(8.5),
               width: hp(100),
               backgroundColor: "white",
-              flexDirection: "row", 
+              flexDirection: "row",
               shadowColor: "#000",
               shadowOffset: { width: 0, height: 1 },
               shadowOpacity: 0.2,
@@ -87,7 +77,7 @@ const Blog = (props) => {
                 marginTop: hp(2),
               }}
             /> */}
-          <Animatable.View animation={canGoForward? "slideInLeft": "slideInRight"} duration={300}>
+          <Animatable.View animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"} duration={300}>
             <ShimmerPlaceholder
               style={{
                 width: wp(93),
@@ -100,7 +90,7 @@ const Blog = (props) => {
               }}
             />
           </Animatable.View>
-          <Animatable.View animation={canGoForward? "slideInLeft": "slideInRight"} duration={300}>
+          <Animatable.View animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"} duration={300}>
             <ShimmerPlaceholder
               style={{
                 width: wp(87),
