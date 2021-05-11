@@ -135,7 +135,7 @@ const App = () => {
         injectedJavaScript={INJECTEDJAVASCRIPT}
         userAgent='Excelorithm'
         cacheEnabled={true}
-        //cacheMode='LOAD_CACHE_ELSE_NETWORK'
+        cacheMode='LOAD_CACHE_ELSE_NETWORK'
         renderError={() => <TryAgain reloadPage={() => reloadPage()} />}
         style={{ height: hp(100), width: wp(100) }}
       />
