@@ -164,7 +164,7 @@ const App = () => {
           }}>
           {link === "https://foga.app/" ? (
             <FeedSkeleton isEnglish={isEnglish} returnYalue={(yValue) => console.log(yValue)} />
-          ) : link === "https://foga.app/trip" ? (
+          ) : link === "https://foga.app/boat" ? (
             <ViewAllTrips isEnglish={isEnglish} canGoForward={canGoForward} />
           ) : link === "https://foga.app/notify/notifications" ? (
             <Messages isEnglish={isEnglish} canGoForward={canGoForward} />
