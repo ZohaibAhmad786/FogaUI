@@ -19,7 +19,10 @@ const FeedSkeleton = (props) => {
     <>
       <View style={{ height: hp(100), width: wp(100) }}>
         <ScrollView contentContainerStyle={{ backgroundColor: "#fff" }} nestedScrollEnabled={false}>
-          <Animatable.View animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"} duration={700}>
+          <Animatable.View
+            useNativeDriver
+            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
+            duration={700}>
             <ShimmerPlaceholder
               style={{
                 overflow: "hidden",
@@ -31,6 +34,7 @@ const FeedSkeleton = (props) => {
           </Animatable.View>
           {/* hoizontal carousal */}
           <Animatable.View
+            useNativeDriver
             animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
             duration={700}
             style={styles.owlCraousel}>
@@ -68,6 +72,7 @@ const FeedSkeleton = (props) => {
               keyExtractor={(item) => item.toString()}
               renderItem={({ item, index }) => (
                 <Animatable.View
+                  useNativeDriver
                   animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
                   duration={700}
                   style={[
@@ -135,6 +140,7 @@ const FeedSkeleton = (props) => {
                 keyExtractor={(item) => item.toString()}
                 renderItem={({ item, index }) => (
                   <Animatable.View
+                    useNativeDriver
                     animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
                     duration={700}
                     style={[
@@ -204,6 +210,7 @@ const FeedSkeleton = (props) => {
                 keyExtractor={(item) => item.toString()}
                 renderItem={({ item, index }) => (
                   <Animatable.View
+                    useNativeDriver
                     animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
                     duration={700}
                     iew

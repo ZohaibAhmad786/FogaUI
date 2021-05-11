@@ -18,7 +18,10 @@ const Tour = (props) => {
     <>
       <View style={{ height: hp(100), width: wp(100) }}>
         <ScrollView contentContainerStyle={{ backgroundColor: "white" }} nestedScrollEnabled={false}>
-          <Animatable.View animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"} duration={300}>
+          <Animatable.View
+            useNativeDriver
+            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
+            duration={300}>
             <ShimmerPlaceholder
               style={{
                 width: wp(100),
@@ -28,6 +31,7 @@ const Tour = (props) => {
             />
           </Animatable.View>
           <Animatable.View
+            useNativeDriver
             animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
             duration={300}
             style={{

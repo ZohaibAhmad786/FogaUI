@@ -19,7 +19,10 @@ const ViewAll = (props) => {
     <>
       <View style={{ height: hp(100), width: wp(100) }}>
         <ScrollView contentContainerStyle={{ backgroundColor: "white", paddingVertical: hp(4) }} nestedScrollEnabled={false}>
-          <Animatable.View animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"} duration={300}>
+          <Animatable.View
+            useNativeDriver
+            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
+            duration={300}>
             <ShimmerPlaceholder
               style={{
                 backgroundColor: "blue",
@@ -33,7 +36,10 @@ const ViewAll = (props) => {
             />
           </Animatable.View>
 
-          <Animatable.View animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"} duration={300}>
+          <Animatable.View
+            useNativeDriver
+            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
+            duration={300}>
             <ShimmerPlaceholder
               style={{
                 backgroundColor: "blue",
@@ -45,7 +51,10 @@ const ViewAll = (props) => {
               }}
             />
           </Animatable.View>
-          <Animatable.View animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"} duration={300}>
+          <Animatable.View
+            useNativeDriver
+            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
+            duration={300}>
             <ShimmerPlaceholder
               style={{
                 backgroundColor: "blue",
@@ -60,6 +69,7 @@ const ViewAll = (props) => {
 
           {/* vertical trips list */}
           <Animatable.View
+            useNativeDriver
             animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
             duration={300}
             style={{ marginTop: hp(-1) }}>
@@ -76,6 +86,7 @@ const ViewAll = (props) => {
                 //       borderRadius: hp(1.6)}} />
                 //    </View>
                 <Animatable.View
+                  useNativeDriver
                   animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
                   duration={700}
                   style={[

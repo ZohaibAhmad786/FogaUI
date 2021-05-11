@@ -19,7 +19,10 @@ const Blog = (props) => {
     <>
       <View style={{ height: hp(100), width: wp(100) }}>
         <ScrollView contentContainerStyle={{ backgroundColor: "white" }} nestedScrollEnabled={false}>
-          <Animatable.View animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"} duration={300}>
+          <Animatable.View
+            useNativeDriver
+            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
+            duration={300}>
             <ShimmerPlaceholder
               style={{
                 width: wp(100),
@@ -77,7 +80,10 @@ const Blog = (props) => {
                 marginTop: hp(2),
               }}
             /> */}
-          <Animatable.View animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"} duration={300}>
+          <Animatable.View
+            useNativeDriver
+            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
+            duration={300}>
             <ShimmerPlaceholder
               style={{
                 width: wp(93),
@@ -90,7 +96,10 @@ const Blog = (props) => {
               }}
             />
           </Animatable.View>
-          <Animatable.View animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"} duration={300}>
+          <Animatable.View
+            useNativeDriver
+            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
+            duration={300}>
             <ShimmerPlaceholder
               style={{
                 width: wp(87),

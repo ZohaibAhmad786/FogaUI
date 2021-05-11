@@ -134,8 +134,8 @@ const App = () => {
         scalesPageToFit={true}
         injectedJavaScript={INJECTEDJAVASCRIPT}
         userAgent='Excelorithm'
-        cacheEnabled={true}
-        cacheMode='LOAD_CACHE_ELSE_NETWORK'
+        cacheEnabled={false}
+        // cacheMode='LOAD_CACHE_ELSE_NETWORK'
         renderError={() => <TryAgain reloadPage={() => reloadPage()} />}
         style={{ height: hp(100), width: wp(100) }}
       />
@@ -166,6 +166,10 @@ const App = () => {
             <FeedSkeleton isEnglish={isEnglish} returnYalue={(yValue) => console.log(yValue)} />
           ) : link === "https://foga.app/trip" ? (
             <ViewAllTrips isEnglish={isEnglish} canGoForward={canGoForward} />
+          ) : link === "https://foga.app/notify/notifications" ? (
+            <Messages isEnglish={isEnglish} canGoForward={canGoForward} />
+          ) : link === "https://foga.app/user/chat" ? (
+            <Chat isEnglish={isEnglish} canGoForward={canGoForward} />
           ) : link === "https://foga.app/tour" ? (
             <ViewAll isEnglish={isEnglish} canGoForward={canGoForward} />
           ) : link === "https://foga.app/trip/egaila-beach" ? ( //https://foga.app/trip/hilton-beach-resort
@@ -173,12 +177,10 @@ const App = () => {
             <Button onPress={onShare} title='Share' />
           ) : link === "https://foga.app/tour/fahaheel-sea-club" ? (
             <Tour isEnglish={isEnglish} canGoForward={canGoForward} />
-          ) : link.startsWith("https://foga.app/news/") ? (
+          ) : link === "https://foga.app/news/" ? (
             <Blog isEnglish={isEnglish} canGoForward={canGoForward} />
-          ) : link.startsWith("https://foga.app/notify/notifications") ? (
-            <Messages isEnglish={isEnglish} canGoForward={canGoForward} />
           ) : (
-            <Chat isEnglish={isEnglish} canGoForward={canGoForward} />
+            <Tour isEnglish={isEnglish} canGoForward={canGoForward} />
           )}
           <View
             style={{
