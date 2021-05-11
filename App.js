@@ -177,7 +177,7 @@ const App = () => {
             <Button onPress={onShare} title='Share' />
           ) : link === "https://foga.app/tour/fahaheel-sea-club" ? (
             <Tour isEnglish={isEnglish} canGoForward={canGoForward} />
-          ) : link === "https://foga.app/news/" ? (
+          ) : link.startsWith("https://foga.app/news/") ? (
             <Blog isEnglish={isEnglish} canGoForward={canGoForward} />
           ) : (
             <Tour isEnglish={isEnglish} canGoForward={canGoForward} />
