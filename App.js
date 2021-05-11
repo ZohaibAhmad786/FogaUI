@@ -33,6 +33,8 @@ import ViewAll from "./ViewAll";
 import Trip from "./Trip";
 import Tour from "./Tour";
 import Blog from "./Blog";
+import Messages from "./Messages";
+import Chat from "./Chat";
 // import ViewAllTrips from "./ViewAllTrips";
 const App = () => {
   const [link, setLink] = React.useState("https://foga.app/");
@@ -114,11 +116,11 @@ const App = () => {
         }}
         ref={webviewRef}
         onLoadStart={(syntheticEvent) => {
-          setIndicator(true);
+          setIndicator(syntheticEvent.nativeEvent.loading);
           setIsAnimationStart(true);
         }}
         onLoadEnd={(syntheticEvent) => {
-          setIndicator(false);
+          setIndicator(syntheticEvent.nativeEvent.loading);
           //setIsAnimationStart(false)
         }}
         sharedCookiesEnabled={true}
@@ -137,6 +139,18 @@ const App = () => {
         renderError={() => <TryAgain reloadPage={() => reloadPage()} />}
         style={{ height: hp(100), width: wp(100) }}
       />
+      {/* <View
+        style={{
+          height: hp(100),
+          width: wp(100),
+          zIndex: 1000,
+          position: "absolute",
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "rgba(0,0,0,0.6)",
+        }}>
+        <Messages isEnglish={isEnglish} />
+      </View> */}
       {indicator && (
         <View
           style={{
@@ -161,10 +175,12 @@ const App = () => {
             <Tour isEnglish={isEnglish} canGoForward={canGoForward} />
           ) : link.startsWith("https://foga.app/news/") ? (
             <Blog isEnglish={isEnglish} canGoForward={canGoForward} />
+          ) : link.startsWith("https://foga.app/notify/notifications") ? (
+            <Messages isEnglish={isEnglish} canGoForward={canGoForward} />
           ) : (
-            <Tour isEnglish={isEnglish} canGoForward={canGoForward} />
+            <Chat isEnglish={isEnglish} canGoForward={canGoForward} />
           )}
-          {/* <View
+          <View
             style={{
               position: "absolute",
               zIndex: 1000,
@@ -219,23 +235,9 @@ const App = () => {
               onPress={() => {}}>
               <FontAwesome name='user' color='#444' size={wp(5)} />
             </TouchableOpacity>
-          </View> */}
+          </View>
         </View>
       )}
-      {/* <ImageBackground  
-        source={require('./assets/logo.png')}
-        resizeMode="cover"
-        style={{
-          height: '100%',
-          width: '100%',
-        }}>  */}
-      {/* <ViewAllTrips />    */}
-      {/* <ViewAll /> */}
-      {/* <Trip /> */}
-      {/* <Tour /> */}
-      {/* <Blog /> */}
-
-      {/* </ImageBackground>   */}
     </SafeAreaView>
   );
 };
