@@ -214,7 +214,6 @@ const FeedSkeleton = (props) => {
                     useNativeDriver
                     animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
                     duration={700}
-                    iew
                     style={[
                       {
                         marginRight: 15,
