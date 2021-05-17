@@ -18,7 +18,7 @@ const FeedSkeleton = (props) => {
   return (
     <>
       <View style={{ height: hp(100), width: wp(100) }}>
-        <ScrollView contentContainerStyle={{ backgroundColor: "#fff" }} nestedScrollEnabled={false}>
+        <ScrollView contentContainerStyle={{ backgroundColor: "#fff", }} nestedScrollEnabled={false}>
           <Animatable.View
             useNativeDriver
             animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
@@ -53,13 +53,13 @@ const FeedSkeleton = (props) => {
                 flexDirection: "row",
                 alignItems: "center",
                 justifyContent: "space-between",
-                width: "96%",
+                width: "96%", 
               }}>
               <View style={{ width: wp(80) }}>
-                <Text style={{ fontWeight: "bold", fontSize: hp(4), color: "#444444" }}>Our best promotion trips</Text>
+                <Text style={{ fontWeight: "bold", fontSize: hp(3), color: "#444444" }}>Tours</Text>
               </View>
               <TouchableOpacity onPress={() => {}}>
-                <Text style={{ fontWeight: "bold", fontSize: 12, color: "#000", marginBottom: hp(2.8) }}>View All</Text>
+                <Text style={{ fontWeight: "bold", fontSize: 12, color: "#000", marginBottom: hp(-1) }}>View All</Text>
               </TouchableOpacity>
             </View>
             {/* hoizontal carousal */}
@@ -77,9 +77,10 @@ const FeedSkeleton = (props) => {
                   duration={700}
                   style={[
                     {
-                      marginRight: 30,
-                      width: wp(75),
-                      height: hp(33.3),
+                      marginTop:-15,
+                      marginRight: 30 ,
+                      width: wp(81.5),
+                      height: hp(35),
                       borderRadius: 15,
                       overflow: "hidden",
                       backgroundColor: "white",
@@ -120,20 +121,20 @@ const FeedSkeleton = (props) => {
             />
           </View>
 
-          <View style={[styles.tripsListCraousel, { height: hp(39), justifyContent: "space-around", width: windowWidth }]}>
+          <View style={[styles.tripsListCraousel, { justifyContent: "space-around", width: windowWidth  }]}>
             <View
               style={{
                 flexDirection: "row",
                 alignItems: "flex-end",
                 justifyContent: "space-between",
-                width: "96%",
+                width: "96%", marginTop:wp(1)
               }}>
-              <Text style={{ fontWeight: "bold", fontSize: hp(4), color: "#444444" }}>Our best promotion</Text>
+              <Text style={{ fontWeight: "bold", fontSize: hp(3.5), color: "#444444",width: wp(80) }}>Our best promotion boats</Text>
               <TouchableOpacity onPress={() => {}}>
-                <Text style={{ fontWeight: "bold", fontSize: 12, color: "#000", marginBottom: hp(1) }}>View All</Text>
+                <Text style={{ fontWeight: "bold", fontSize: 12, color: "#000", marginBottom: hp(5) }}>View All</Text>
               </TouchableOpacity>
             </View>
-            <View style={[{ alignItems: "center" }]}>
+            <View style={[{ alignItems: "center",marginTop:hp(2.5), }]}>
               <FlatList
                 horizontal
                 data={dummyData}
@@ -146,10 +147,10 @@ const FeedSkeleton = (props) => {
                     style={[
                       {
                         marginRight: 30,
-                        width: wp(75),
-                        height: hp(30),
+                        width: wp(81.5),
+                        height: hp(35),
                         borderRadius: 15,
-                        marginTop: hp(3),
+                        //marginTop: hp(1),
                         overflow: "hidden",
                         backgroundColor: "white",
                         shadowColor: "#000",
@@ -165,7 +166,7 @@ const FeedSkeleton = (props) => {
                     ]}>
                     <View
                       style={{
-                        height: "87%",
+                        height: "77%",
                         width: "100%",
                       }}>
                       <ShimmerPlaceholder
@@ -177,9 +178,9 @@ const FeedSkeleton = (props) => {
                     </View>
                     <View
                       style={{
-                        height: "13%",
+                        height: "23%",
                         width: "100%",
-                        justifyContent: "center",
+                        justifyContent: "center" 
                       }}>
                       <ShimmerPlaceholder style={{ position: "absolute", top: wp(2), left: wp(2.5), fontSize: wp(5) }} />
                       {/* <ShimmerPlaceholder speed={700}>
@@ -192,15 +193,15 @@ const FeedSkeleton = (props) => {
             </View>
           </View>
 
-          <View style={[styles.blogCraousel, { height: hp(65), paddingTop: hp(3), marginTop: hp(4) }]}>
+          <View style={[styles.blogCraousel, { height: hp(66), paddingTop: hp(4), marginTop: hp(4.7) }]}>
             <View style={{}}>
               <Text
                 style={{
                   fontWeight: "bold",
-                  fontSize: 20,
+                  fontSize: 26,
                   color: "white",
                 }}>
-                Read the latest from blog
+                Read about experiences
               </Text>
             </View>
             <View style={[{ marginBottom: "5%", marginTop: wp(1) }]}>
@@ -216,13 +217,13 @@ const FeedSkeleton = (props) => {
                     iew
                     style={[
                       {
-                        marginRight: 10,
-                        width: wp(77),
-                        height: hp(44),
+                        marginRight: 15,
+                        width: wp(77.5),
+                        height: hp(43),
                         borderRadius: 15,
                         overflow: "hidden",
                         backgroundColor: "white",
-                        marginBottom: hp(4.9),
+                        marginBottom: hp(5.9),
                       },
                     ]}>
                     <View
@@ -275,14 +276,14 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   tripsListCraousel: {
-    paddingLeft: "5%",
+    paddingLeft: "4%",
     width: "100%",
     height: hp(48),
     marginTop: hp(1.5),
   },
   blogCraousel: {
     backgroundColor: "black",
-    paddingHorizontal: "5%",
+    paddingHorizontal: "4%",
     width: "100%",
     justifyContent: "space-around",
     paddingVertical: 6.5,

@@ -96,7 +96,7 @@ const App = () => {
 
   return (
     <SafeAreaView style={{ flex: 1, justifyContent: "center", marginTop: StatusBar.currentHeight }}>
-      <WebView
+       <WebView
         source={{ uri: "https://foga.app" }}
         onNavigationStateChange={(navState) => {
           console.log(navState.url);
@@ -139,18 +139,18 @@ const App = () => {
         renderError={() => <TryAgain reloadPage={() => reloadPage()} />}
         style={{ height: hp(100), width: wp(100) }}
       />
-      {/* <View
-        style={{
-          height: hp(100),
-          width: wp(100),
-          zIndex: 1000,
-          position: "absolute",
-          justifyContent: "center",
-          alignItems: "center",
-          backgroundColor: "rgba(0,0,0,0.6)",
-        }}>
-        <Messages isEnglish={isEnglish} />
-      </View> */}
+      {/* //  <View
+      //   style={{
+      //     height: hp(100),
+      //     width: wp(100),
+      //     zIndex: 1000,
+      //     position: "absolute",
+      //     justifyContent: "center",
+      //     alignItems: "center",
+      //     backgroundColor: "rgba(0,0,0,0.6)",
+      //   }}>
+      //   <Messages isEnglish={isEnglish} />
+      // </View>  */}
       {indicator && (
         <View
           style={{
@@ -165,24 +165,24 @@ const App = () => {
           {link === "https://foga.app/" ? (
             <FeedSkeleton isEnglish={isEnglish} returnYalue={(yValue) => console.log(yValue)} />
           ) : link === "https://foga.app/boat" ? (
-            <ViewAllTrips isEnglish={isEnglish} canGoForward={canGoForward} />
+            <ViewAll isEnglish={isEnglish} canGoForward={canGoForward} />
           ) : link === "https://foga.app/notify/notifications" ? (
             <Messages isEnglish={isEnglish} canGoForward={canGoForward} />
           ) : link === "https://foga.app/user/chat" ? (
             <Chat isEnglish={isEnglish} canGoForward={canGoForward} />
           ) : link === "https://foga.app/tour" ? (
             <ViewAll isEnglish={isEnglish} canGoForward={canGoForward} />
-          ) : link === "https://foga.app/trip/egaila-beach" ? ( //https://foga.app/trip/hilton-beach-resort
-            //<Trip canGoForward={canGoForward} />
-            <Button onPress={onShare} title='Share' />
-          ) : link === "https://foga.app/tour/fahaheel-sea-club" ? (
+          ) : link === "https://foga.app/boat/ibtsama-kuwait" ? ( //https://foga.app/trip/hilton-beach-resort
+            <Trip canGoForward={canGoForward} />
+            //<Button onPress={onShare} title='Share' />
+          ) : link === "https://foga.app/tour/albohayra-farm" ? (
             <Tour isEnglish={isEnglish} canGoForward={canGoForward} />
-          ) : link === "https://foga.app/news/" ? (
+          ) : link === "https://foga.app/news/kashmir-solidarity-day" ? (
             <Blog isEnglish={isEnglish} canGoForward={canGoForward} />
           ) : (
             <Tour isEnglish={isEnglish} canGoForward={canGoForward} />
           )}
-          <View
+          {/* <View
             style={{
               position: "absolute",
               zIndex: 1000,
@@ -237,9 +237,9 @@ const App = () => {
               onPress={() => {}}>
               <FontAwesome name='user' color='#444' size={wp(5)} />
             </TouchableOpacity>
-          </View>
+          </View> */}
         </View>
-      )}
+      )} 
     </SafeAreaView>
   );
 };

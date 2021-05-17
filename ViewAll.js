@@ -92,9 +92,9 @@ const ViewAll = (props) => {
                   style={[
                     {
                       width: wp(90),
-                      height: hp(39.8),
+                      height: hp(41),
                       borderRadius: hp(2),
-                      marginLeft: hp(2.6),
+                      marginLeft: hp(2.3),
                       marginTop: hp(3),
                       overflow: "hidden",
                       backgroundColor: "white",
@@ -103,12 +103,12 @@ const ViewAll = (props) => {
                       shadowOpacity: 0.2,
                       shadowRadius: 1.41,
                       elevation: 3,
-                      marginBottom: wp(2),
+                      marginBottom: wp(2.5),
                     },
                   ]}>
                   <View
                     style={{
-                      height: "83%",
+                      height: "76%",
                       width: "100%",
                     }}>
                     <ShimmerPlaceholder
@@ -120,11 +120,11 @@ const ViewAll = (props) => {
                   </View>
                   <View
                     style={{
-                      height: "17%",
+                      height: "24%",
                       width: "100%",
                       justifyContent: "center",
                     }}>
-                    <ShimmerPlaceholder style={{ width: wp(75), height: hp(2), left: wp(2.5), fontSize: wp(5) }} />
+                    <ShimmerPlaceholder style={{ width: wp(70), height: hp(2), left: wp(2.5), fontSize: wp(5),marginTop: hp(-4.5) }} />
                   </View>
                 </Animatable.View>
               )}

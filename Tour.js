@@ -44,8 +44,8 @@ const Tour = (props) => {
             }}>
             <ShimmerPlaceholder
               style={{
-                width: wp(13),
-                height: hp(3),
+                width: wp(65),
+                height: hp(3.2),
                 marginLeft: wp(3.5),
                 justifyContent: "center",
                 marginTop: hp(6),
@@ -53,14 +53,14 @@ const Tour = (props) => {
             />
             <ShimmerPlaceholder
               style={{
-                width: wp(65),
-                height: hp(3.2),
+                width: wp(20),
+                height: hp(3),
                 marginLeft: wp(3.5),
                 justifyContent: "center",
                 marginTop: hp(1.5),
               }}
             />
-            <ShimmerPlaceholder
+            {/* <ShimmerPlaceholder
               style={{
                 width: wp(13),
                 height: hp(3),
@@ -68,7 +68,7 @@ const Tour = (props) => {
                 justifyContent: "center",
                 marginTop: hp(1.5),
               }}
-            />
+            /> */}
             <View style={{ flexDirection: "row" }}>
               <ShimmerPlaceholder
                 style={{
@@ -97,7 +97,7 @@ const Tour = (props) => {
                 height: hp(3),
                 marginLeft: wp(3.5),
                 justifyContent: "center",
-                marginTop: hp(6), //3
+                marginTop: hp(3), //3
               }}
             />
             <ShimmerPlaceholder

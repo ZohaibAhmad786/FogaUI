@@ -44,8 +44,8 @@ const Trip = (props) => {
             }}>
             <ShimmerPlaceholder
               style={{
-                width: wp(13),
-                height: hp(3),
+                width: wp(68),
+                height: hp(3.2),
                 marginLeft: wp(3.5),
                 justifyContent: "center",
                 marginTop: hp(6),
@@ -53,14 +53,14 @@ const Trip = (props) => {
             />
             <ShimmerPlaceholder
               style={{
-                width: wp(68),
-                height: hp(3.2),
+                width: wp(19),
+                height: hp(3),
                 marginLeft: wp(3.5),
                 justifyContent: "center",
                 marginTop: hp(1.5),
               }}
             />
-            <ShimmerPlaceholder
+            {/* <ShimmerPlaceholder
               style={{
                 width: wp(18),
                 height: hp(3),
@@ -68,8 +68,8 @@ const Trip = (props) => {
                 justifyContent: "center",
                 marginTop: hp(1.5),
               }}
-            />
-            <View style={{ flexDirection: "row" }}>
+            /> */}
+            {/* <View style={{ flexDirection: "row" }}>
               <ShimmerPlaceholder
                 style={{
                   width: wp(33),
@@ -90,14 +90,158 @@ const Trip = (props) => {
                   borderRadius: hp(1.5),
                 }}
               />
-            </View>
+            </View> */}
             <ShimmerPlaceholder
               style={{
-                width: wp(31),
+                width: wp(35),
                 height: hp(3.5),
                 marginLeft: wp(3.5),
                 justifyContent: "center",
-                marginTop: hp(3),
+                marginTop: hp(7.5),
+              }}
+            />
+            <ShimmerPlaceholder
+              style={{
+                width: wp(75),
+                height: hp(2),
+                marginLeft: wp(3.5),
+                justifyContent: "center",
+                marginTop: hp(1.45),
+              }}
+            />
+            <ShimmerPlaceholder
+              style={{
+                width: wp(80),
+                height: hp(2),
+                marginLeft: wp(3.5),
+                justifyContent: "center",
+                marginTop: hp(1.45),
+              }}
+            />
+            <ShimmerPlaceholder
+              style={{
+                width: wp(85),
+                height: hp(2),
+                marginLeft: wp(3.5),
+                justifyContent: "center",
+                marginTop: hp(1.45),
+              }}
+            />
+            <ShimmerPlaceholder
+              style={{
+                width: wp(83),
+                height: hp(2),
+                marginLeft: wp(3.5),
+                justifyContent: "center",
+                marginTop: hp(1.45),
+              }}
+            />
+            <ShimmerPlaceholder
+              style={{
+                width: wp(80),
+                height: hp(2),
+                marginLeft: wp(3.5),
+                justifyContent: "center",
+                marginTop: hp(1.45),
+              }}
+            />
+            <ShimmerPlaceholder
+              style={{
+                width: wp(85),
+                height: hp(2),
+                marginLeft: wp(3.5),
+                justifyContent: "center",
+                marginTop: hp(1.45),
+              }}
+            />
+            <ShimmerPlaceholder
+              style={{
+                width: wp(83),
+                height: hp(2),
+                marginLeft: wp(3.5),
+                justifyContent: "center",
+                marginTop: hp(1.45),
+              }}
+            />
+            <ShimmerPlaceholder
+              style={{
+                width: wp(85),
+                height: hp(2),
+                marginLeft: wp(3.5),
+                justifyContent: "center",
+                marginTop: hp(1.45),
+              }}
+            />
+            <ShimmerPlaceholder
+              style={{
+                width: wp(82),
+                height: hp(2),
+                marginLeft: wp(3.5),
+                justifyContent: "center",
+                marginTop: hp(1.45),
+              }}
+            />
+            <ShimmerPlaceholder
+              style={{
+                width: wp(83),
+                height: hp(2),
+                marginLeft: wp(3.5),
+                justifyContent: "center",
+                marginTop: hp(1.45),
+              }}
+            />
+            <ShimmerPlaceholder
+              style={{
+                width: wp(81),
+                height: hp(2),
+                marginLeft: wp(3.5),
+                justifyContent: "center",
+                marginTop: hp(1.45),
+              }}
+            />
+            <ShimmerPlaceholder
+              style={{
+                width: wp(85),
+                height: hp(2),
+                marginLeft: wp(3.5),
+                justifyContent: "center",
+                marginTop: hp(1.45),
+              }}
+            />
+            <ShimmerPlaceholder
+              style={{
+                width: wp(85),
+                height: hp(2),
+                marginLeft: wp(3.5),
+                justifyContent: "center",
+                marginTop: hp(1.45),
+              }}
+            />
+            <ShimmerPlaceholder
+              style={{
+                width: wp(81),
+                height: hp(2),
+                marginLeft: wp(3.5),
+                justifyContent: "center",
+                marginTop: hp(1.45),
+              }}
+            />
+            <ShimmerPlaceholder
+              style={{
+                width: wp(20),
+                height: hp(2),
+                marginLeft: wp(3.5),
+                justifyContent: "center",
+                marginTop: hp(1.45),
+              }}
+            />
+            <ShimmerPlaceholder
+              style={{
+                width: wp(39),
+                height: hp(3.5),
+                marginLeft: wp(3.5),
+                justifyContent: "center",
+                marginTop: hp(4),
               }}
             />
             <ShimmerPlaceholder
