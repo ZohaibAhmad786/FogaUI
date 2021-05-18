@@ -164,20 +164,22 @@ const App = () => {
           }}>
           {link === "https://foga.app/" ? (
             <FeedSkeleton isEnglish={isEnglish} returnYalue={(yValue) => console.log(yValue)} />
-          ) : link === "https://foga.app/boat" ? (
+          ) : link === "https://foga.app/boat" || link.startsWith("https://foga.app/boat?")&&link.substring(0,('https://foga.app/boat?').length).endsWith('?') ? (
             <ViewAll isEnglish={isEnglish} canGoForward={canGoForward} />
           ) : link === "https://foga.app/notify/notifications" ? (
-            <Messages isEnglish={isEnglish} canGoForward={canGoForward} />
+            <Messages isEnglish={isEnglish} canGoForward={canGoForward} /> 
           ) : link === "https://foga.app/user/chat" ? (
             <Chat isEnglish={isEnglish} canGoForward={canGoForward} />
-          ) : link === "https://foga.app/tour" ? (
+          ) : link === "https://foga.app/tour"  || link.startsWith("https://foga.app/tour?")&&link.substring(0,('https://foga.app/tour?').length).endsWith('?') ? (
             <ViewAll isEnglish={isEnglish} canGoForward={canGoForward} />
-          ) : link === "https://foga.app/boat/ibtsama-kuwait" ? ( //https://foga.app/trip/hilton-beach-resort
+          ) : link.startsWith("https://foga.app/boat/")&&link.substring(0,('https://foga.app/boat/').length).endsWith('/') ? (
+          //link === "https://foga.app/boat/ibtsama-kuwait" ? ( //https://foga.app/trip/hilton-beach-resort
             <Trip canGoForward={canGoForward} />
             //<Button onPress={onShare} title='Share' />
-          ) : link === "https://foga.app/tour/albohayra-farm" ? (
+          ) : link.startsWith("https://foga.app/tour/")&&link.substring(0,('https://foga.app/tour/').length).endsWith('/') ? (
             <Tour isEnglish={isEnglish} canGoForward={canGoForward} />
-          ) : link === "https://foga.app/news/kashmir-solidarity-day" ? (
+          ) : link.startsWith("https://foga.app/news/")&&link.substring(0,('https://foga.app/news/').length).endsWith('/') || link.startsWith("https://foga.app/news?")&&link.substring(0,('https://foga.app/news?').length).endsWith('?') ? (
+          //link === "https://foga.app/news/kashmir-solidarity-day" ? (
             <Blog isEnglish={isEnglish} canGoForward={canGoForward} />
           ) : (
             <Tour isEnglish={isEnglish} canGoForward={canGoForward} />
