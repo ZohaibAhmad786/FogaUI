@@ -9,7 +9,7 @@ import {
   removeOrientationListener as rol,
 } from "react-native-responsive-screen";
 import { Ionicons } from "@expo/vector-icons";
-import { AntDesign } from "@expo/vector-icons";
+import { AntDesign,FontAwesome } from "@expo/vector-icons";
 
 const Chat = (props) => {
   const { canGoForward, isEnglish } = props;
@@ -22,7 +22,7 @@ const Chat = (props) => {
         style={{ height: hp(25), backgroundColor: "#FAFAFF", paddingHorizontal: wp(5), paddingTop: wp(4) }}>
         <View
           style={{
-            height: hp(7),
+            height: hp(5.3),marginTop:hp(2),
             backgroundColor: "#fff",
             shadowColor: "#000",
             shadowOffset: {
@@ -37,20 +37,96 @@ const Chat = (props) => {
             width: "100%",
             paddingHorizontal: wp(5),
           }}>
-          <Ionicons name='arrow-back' size={wp(8)} color='#00AEEF' />
+          <Ionicons name='arrow-back' size={wp(6.5)} color='#2180F3' />
           <View style={{ height: wp(8), width: wp(8), borderRadius: wp(4), marginHorizontal: wp(3), backgroundColor: "#cecece" }} />
-          <Text style={{ color: "#00AEEF" }}>Messanger</Text>
-          <View style={{ position: "absolute", right: wp(6) }}>
-            <AntDesign name='infocirlce' size={wp(5)} color='#00AEEF' />
+          <Text style={{ color: "#606679" ,fontWeight: 'bold'}}>Messenger</Text>
+          <View style={{ position: "absolute", left: wp(71) }}>
+            <FontAwesome name='home' size={wp(5)} color='#2180F3' />
           </View>
+          <View style={{ position: "absolute", right: wp(6) }}>
+            <AntDesign name='infocirlce' size={wp(5)} color='#2180F3' />
+          </View>
+         
         </View>
 
         <ShimmerPlaceholder
           style={{
-            height: hp(4),
-            width: "90%",
+            height: hp(2.8),
+            width: "85%",
             alignSelf: "center",
             borderRadius: wp(5),
+            marginTop: hp(4),
+          }}
+        />
+        <ShimmerPlaceholder
+          style={{
+            height: hp(10),
+            width: wp(95),
+            alignSelf: "center",
+            borderRadius: wp(2),
+            marginTop: hp(5.7),
+          }}
+        />
+        <ShimmerPlaceholder
+          style={{
+            height: hp(10),
+            width: wp(95),
+            alignSelf: "center",
+            borderRadius: wp(2),
+            marginTop: hp(1),
+          }}
+        />
+        <ShimmerPlaceholder
+          style={{
+            height: hp(10),
+            width: wp(95),
+            alignSelf: "center",
+            borderRadius: wp(2),
+            marginTop: hp(1),
+          }}
+        />
+        <ShimmerPlaceholder
+          style={{
+            height: hp(10),
+            width: wp(95),
+            alignSelf: "center",
+            borderRadius: wp(2),
+            marginTop: hp(1),
+          }}
+        />
+        <ShimmerPlaceholder
+          style={{
+            height: hp(10),
+            width: wp(95),
+            alignSelf: "center",
+            borderRadius: wp(2),
+            marginTop: hp(1),
+          }}
+        />
+        <ShimmerPlaceholder
+          style={{
+            height: hp(10),
+            width: wp(95),
+            alignSelf: "center",
+            borderRadius: wp(2),
+            marginTop: hp(1),
+          }}
+        />
+        <ShimmerPlaceholder
+          style={{
+            height: hp(10),
+            width: wp(95),
+            alignSelf: "center",
+            borderRadius: wp(2),
+            marginTop: hp(1),
+          }}
+        />
+        <ShimmerPlaceholder
+          style={{
+            height: hp(10),
+            width: wp(95),
+            alignSelf: "center",
+            borderRadius: wp(2),
             marginTop: hp(1),
           }}
         />

@@ -22,7 +22,7 @@ const FeedSkeleton = (props) => {
           <Animatable.View
             useNativeDriver
             animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
-            duration={700}>
+            duration={500}>
             <ShimmerPlaceholder
               style={{
                 overflow: "hidden",
@@ -36,13 +36,13 @@ const FeedSkeleton = (props) => {
           <Animatable.View
             useNativeDriver
             animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
-            duration={700}
+            duration={500}
             style={styles.owlCraousel}>
             <FlatList
               horizontal
               data={dummyData}
               keyExtractor={(item) => item.toString()}
-              renderItem={({ item, index }) => <ShimmerPlaceholder speed={700} style={styles.effect} />}
+              renderItem={({ item, index }) => <ShimmerPlaceholder speed={500} style={styles.effect} />}
             />
           </Animatable.View>
 
@@ -74,7 +74,7 @@ const FeedSkeleton = (props) => {
                 <Animatable.View
                   useNativeDriver
                   animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
-                  duration={700}
+                  duration={500}
                   style={[
                     {
                       marginTop:-15,
@@ -143,7 +143,7 @@ const FeedSkeleton = (props) => {
                   <Animatable.View
                     useNativeDriver
                     animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
-                    duration={700}
+                    duration={500}
                     style={[
                       {
                         marginRight: 30,
@@ -183,7 +183,7 @@ const FeedSkeleton = (props) => {
                         justifyContent: "center" 
                       }}>
                       <ShimmerPlaceholder style={{ position: "absolute", top: wp(2), left: wp(2.5), fontSize: wp(5) }} />
-                      {/* <ShimmerPlaceholder speed={700}>
+                      {/* <ShimmerPlaceholder speed={500}>
                       <View style={{ height: 30, width: "60%" }} />
                     </ShimmerPlaceholder> */}
                     </View>
@@ -213,7 +213,7 @@ const FeedSkeleton = (props) => {
                   <Animatable.View
                     useNativeDriver
                     animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
-                    duration={700}
+                    duration={500}
                     style={[
                       {
                         marginRight: 15,

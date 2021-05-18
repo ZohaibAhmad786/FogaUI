@@ -25,7 +25,7 @@ import {
   listenOrientationChange as lor,
   removeOrientationListener as rol,
 } from "react-native-responsive-screen";
-import TryAgain from "./components/TryAgain";
+//import TryAgain from "./components/TryAgain";
 import { FontAwesome, FontAwesome5, MaterialCommunityIcons } from "@expo/vector-icons";
 import * as Animatable from "react-native-animatable";
 import ViewAllTrips from "./ViewAllTrips";
@@ -35,6 +35,8 @@ import Tour from "./Tour";
 import Blog from "./Blog";
 import Messages from "./Messages";
 import Chat from "./Chat";
+import WishList from "./WishList";
+import DefaultScreen from "./DefaultScreen";
 // import ViewAllTrips from "./ViewAllTrips";
 const App = () => {
   const [link, setLink] = React.useState("https://foga.app/");
@@ -106,10 +108,10 @@ const App = () => {
         }}
         onMessage={(event) => {
           const message = event.nativeEvent.data;
-          console.log(JSON.parse(message));
-          if (JSON.parse(message)?.share) {
-            onShare(JSON.parse(message)?.share);
-          }
+          // console.log(JSON.parse(message));
+          // if (JSON.parse(message)?.share) {
+          //   onShare(JSON.parse(message)?.share);
+          // }
           // message = JSON.parse(message);
           // Linking.openURL("https://www.facebook.com/");
           // console.log(message);
@@ -136,21 +138,9 @@ const App = () => {
         userAgent='Excelorithm'
         cacheEnabled={false}
         // cacheMode='LOAD_CACHE_ELSE_NETWORK'
-        renderError={() => <TryAgain reloadPage={() => reloadPage()} />}
+        //renderError={() => <TryAgain reloadPage={() => reloadPage()} />}
         style={{ height: hp(100), width: wp(100) }}
       />
-      {/* //  <View
-      //   style={{
-      //     height: hp(100),
-      //     width: wp(100),
-      //     zIndex: 1000,
-      //     position: "absolute",
-      //     justifyContent: "center",
-      //     alignItems: "center",
-      //     backgroundColor: "rgba(0,0,0,0.6)",
-      //   }}>
-      //   <Messages isEnglish={isEnglish} />
-      // </View>  */}
       {indicator && (
         <View
           style={{
@@ -170,6 +160,8 @@ const App = () => {
             <Messages isEnglish={isEnglish} canGoForward={canGoForward} /> 
           ) : link === "https://foga.app/user/chat" ? (
             <Chat isEnglish={isEnglish} canGoForward={canGoForward} />
+            ) : link === "https://foga.app/user/wishlist" ? (
+            <WishList isEnglish={isEnglish} canGoForward={canGoForward} />
           ) : link === "https://foga.app/tour"  || link.startsWith("https://foga.app/tour?")&&link.substring(0,('https://foga.app/tour?').length).endsWith('?') ? (
             <ViewAll isEnglish={isEnglish} canGoForward={canGoForward} />
           ) : link.startsWith("https://foga.app/boat/")&&link.substring(0,('https://foga.app/boat/').length).endsWith('/') ? (
@@ -182,9 +174,23 @@ const App = () => {
           //link === "https://foga.app/news/kashmir-solidarity-day" ? (
             <Blog isEnglish={isEnglish} canGoForward={canGoForward} />
           ) : (
-            <Tour isEnglish={isEnglish} canGoForward={canGoForward} />
+            <DefaultScreen isEnglish={isEnglish} canGoForward={canGoForward} />
           )}
-          {/* <View
+          
+        </View>
+      )} 
+      {/* <DefaultScreen /> */}
+
+    </SafeAreaView>
+  );
+};
+
+export default App;
+
+const styles = StyleSheet.create({});
+
+
+{/* <View
             style={{
               position: "absolute",
               zIndex: 1000,
@@ -240,12 +246,3 @@ const App = () => {
               <FontAwesome name='user' color='#444' size={wp(5)} />
             </TouchableOpacity>
           </View> */}
-        </View>
-      )} 
-    </SafeAreaView>
-  );
-};
-
-export default App;
-
-const styles = StyleSheet.create({});

@@ -14,15 +14,6 @@ const Messages = (props) => {
   return (
     <View style={{ height: hp(100), width: wp(100), backgroundColor: "#cecece" }}>
       <ScrollView contentContainerStyle={{ backgroundColor: "white", paddingHorizontal: wp(2), paddingBottom: hp(2) }} nestedScrollEnabled={false}>
-        {/* <Animatable.View animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"} duration={3000}>
-          <ShimmerPlaceholder
-            style={{
-              width: wp(100),
-              height: hp(29.5),
-              justifyContent: "center",
-            }}
-          />
-        </Animatable.View> */}
         <Animatable.View
           useNativeDriver={true}
           animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
