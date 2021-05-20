@@ -46,7 +46,7 @@ const App = () => {
   const [indicator, setIndicator] = React.useState(true);
   const webviewRef = React.useRef(null);
   const [isAnimationStart, setIsAnimationStart] = React.useState(true);
-  const [isEnglish, setIsEnglish] = React.useState(true);
+  const [isEnglish, setIsEnglish] = React.useState(null);
 
   const INJECTEDJAVASCRIPT =
     "setTimeout(() => {document.addEventListener('scroll', function (event) {window.ReactNativeWebView.postMessage(JSON.stringify(document.getElementsByClassName('topconteiner')[0].scrollTop));},true);}, 300);true;";
@@ -73,7 +73,7 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    registerForPushNotificationsAsync().then((token) => alert(token));
+    registerForPushNotificationsAsync().then((token) => {});
   }, []);
 
   const [splash, setSplash] = useState(true);
@@ -82,6 +82,7 @@ const App = () => {
       setSplash((state) => !state);
     }, 3000);
   }, []);
+
   const onShare = async (url) => {
     try {
       const result = await Share.share({
@@ -113,10 +114,17 @@ const App = () => {
         }}
         onMessage={(event) => {
           const message = event.nativeEvent.data;
-          // console.log(JSON.parse(message));
-          // if (JSON.parse(message)?.share) {
-          //   onShare(JSON.parse(message)?.share);
-          // }
+          console.log(JSON.parse(message));
+          if (JSON.parse(message)?.share) {
+            onShare(JSON.parse(message)?.share);
+          }
+          if (JSON.parse(message)?.lang) {
+            if (JSON.parse(message)?.lang === "en") {
+              setIsEnglish(true);
+            } else {
+              setIsEnglish(false);
+            }
+          }
           // message = JSON.parse(message);
           // Linking.openURL("https://www.facebook.com/");
           // console.log(message);
@@ -162,8 +170,9 @@ const App = () => {
           ) : link === "https://foga.app/boat" ||
             (link.startsWith("https://foga.app/boat?") && link.substring(0, "https://foga.app/boat?".length).endsWith("?")) ? (
             <ViewAll isEnglish={isEnglish} canGoForward={canGoForward} />
-          ) : link === "https://foga.app/notify/notifications" || link.startsWith("https://foga.app/notify/notifications?")&&link.substring(0,('https://foga.app/notify/notifications?').length).endsWith('?') ? (
-            <Messages isEnglish={isEnglish} canGoForward={canGoForward} /> 
+          ) : link === "https://foga.app/notify/notifications" ||
+            (link.startsWith("https://foga.app/notify/notifications?") && link.substring(0, "https://foga.app/notify/notifications?".length).endsWith("?")) ? (
+            <Messages isEnglish={isEnglish} canGoForward={canGoForward} />
           ) : link === "https://foga.app/user/chat" ? (
             <Chat isEnglish={isEnglish} canGoForward={canGoForward} />
           ) : link === "https://foga.app/user/wishlist" ? (

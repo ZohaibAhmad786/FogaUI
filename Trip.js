@@ -20,9 +20,11 @@ const Trip = (props) => {
         <ScrollView contentContainerStyle={{ backgroundColor: "white" }} nestedScrollEnabled={false}>
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
             duration={300}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(100),
                 height: hp(29.5),
@@ -32,7 +34,7 @@ const Trip = (props) => {
           </Animatable.View>
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
             duration={300}
             style={{
               width: wp(92.5),
@@ -43,6 +45,8 @@ const Trip = (props) => {
               borderRadius: hp(2),
             }}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(68),
                 height: hp(3.2),
@@ -52,6 +56,8 @@ const Trip = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(19),
                 height: hp(3),
@@ -60,7 +66,7 @@ const Trip = (props) => {
                 marginTop: hp(1.5),
               }}
             />
-            {/* <ShimmerPlaceholder
+            {/* <ShimmerPlaceholder  location={[0.3,0.5,0.7,0.9]}   isReversed={isEnglish}
               style={{
                 width: wp(18),
                 height: hp(3),
@@ -70,7 +76,7 @@ const Trip = (props) => {
               }}
             /> */}
             {/* <View style={{ flexDirection: "row" }}>
-              <ShimmerPlaceholder
+              <ShimmerPlaceholder  location={[0.3,0.5,0.7,0.9]}   isReversed={isEnglish}
                 style={{
                   width: wp(33),
                   height: hp(18),
@@ -80,7 +86,7 @@ const Trip = (props) => {
                   borderRadius: hp(1.5),
                 }}
               />
-              <ShimmerPlaceholder
+              <ShimmerPlaceholder  location={[0.3,0.5,0.7,0.9]}   isReversed={isEnglish}
                 style={{
                   width: wp(33),
                   height: hp(18),
@@ -92,6 +98,8 @@ const Trip = (props) => {
               />
             </View> */}
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(35),
                 height: hp(3.5),
@@ -101,6 +109,8 @@ const Trip = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(75),
                 height: hp(2),
@@ -110,6 +120,8 @@ const Trip = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(80),
                 height: hp(2),
@@ -119,6 +131,8 @@ const Trip = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(85),
                 height: hp(2),
@@ -128,6 +142,8 @@ const Trip = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(83),
                 height: hp(2),
@@ -137,6 +153,8 @@ const Trip = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(80),
                 height: hp(2),
@@ -146,6 +164,8 @@ const Trip = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(85),
                 height: hp(2),
@@ -155,6 +175,8 @@ const Trip = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(83),
                 height: hp(2),
@@ -164,6 +186,8 @@ const Trip = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(85),
                 height: hp(2),
@@ -173,6 +197,8 @@ const Trip = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(82),
                 height: hp(2),
@@ -182,6 +208,8 @@ const Trip = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(83),
                 height: hp(2),
@@ -191,6 +219,8 @@ const Trip = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(81),
                 height: hp(2),
@@ -200,6 +230,8 @@ const Trip = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(85),
                 height: hp(2),
@@ -209,6 +241,8 @@ const Trip = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(85),
                 height: hp(2),
@@ -218,6 +252,8 @@ const Trip = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(81),
                 height: hp(2),
@@ -227,6 +263,8 @@ const Trip = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(20),
                 height: hp(2),
@@ -236,6 +274,8 @@ const Trip = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(39),
                 height: hp(3.5),
@@ -245,6 +285,8 @@ const Trip = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(75),
                 height: hp(2),
@@ -254,6 +296,8 @@ const Trip = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(80),
                 height: hp(2),
@@ -263,6 +307,8 @@ const Trip = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(85),
                 height: hp(2),
@@ -272,6 +318,8 @@ const Trip = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(83),
                 height: hp(2),
@@ -281,6 +329,8 @@ const Trip = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(80),
                 height: hp(2),
@@ -290,6 +340,8 @@ const Trip = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(85),
                 height: hp(2),
@@ -299,6 +351,8 @@ const Trip = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(83),
                 height: hp(2),
@@ -308,6 +362,8 @@ const Trip = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(85),
                 height: hp(2),
@@ -317,6 +373,8 @@ const Trip = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(82),
                 height: hp(2),
@@ -326,6 +384,8 @@ const Trip = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(83),
                 height: hp(2),
@@ -335,6 +395,8 @@ const Trip = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(81),
                 height: hp(2),
@@ -344,6 +406,8 @@ const Trip = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(85),
                 height: hp(2),
@@ -353,6 +417,8 @@ const Trip = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(85),
                 height: hp(2),
@@ -362,6 +428,8 @@ const Trip = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(81),
                 height: hp(2),
@@ -371,6 +439,8 @@ const Trip = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(20),
                 height: hp(2),

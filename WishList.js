@@ -17,12 +17,14 @@ const WishList = (props) => {
   return (
     <>
       <View style={{ height: hp(100), width: wp(100) }}>
-      <ScrollView contentContainerStyle={{ backgroundColor: "white", paddingVertical: hp(4) }} nestedScrollEnabled={false}>
+        <ScrollView contentContainerStyle={{ backgroundColor: "white", paddingVertical: hp(4) }} nestedScrollEnabled={false}>
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
             duration={300}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(92),
@@ -37,9 +39,11 @@ const WishList = (props) => {
 
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
             duration={300}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(35),
@@ -52,9 +56,11 @@ const WishList = (props) => {
           </Animatable.View>
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
             duration={300}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(50),
@@ -69,7 +75,7 @@ const WishList = (props) => {
           {/* vertical trips list */}
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
             duration={300}
             style={{ marginTop: hp(-1) }}>
             <FlatList
@@ -77,10 +83,9 @@ const WishList = (props) => {
               showsVerticalScrollIndicator={false}
               keyExtractor={(item) => item.toString()}
               renderItem={({ item, index }) => (
-            
                 <Animatable.View
                   useNativeDriver
-                  animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
+                  animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
                   duration={700}
                   style={[
                     {
@@ -105,6 +110,8 @@ const WishList = (props) => {
                       width: "100%",
                     }}>
                     <ShimmerPlaceholder
+                      location={[0.3, 0.5, 0.7, 0.9]}
+                      isReversed={isEnglish}
                       style={{
                         height: "100%",
                         width: "100%",
@@ -117,7 +124,11 @@ const WishList = (props) => {
                       width: "100%",
                       justifyContent: "center",
                     }}>
-                    <ShimmerPlaceholder style={{ width: wp(70), height: hp(2), left: wp(2.5), fontSize: wp(5),marginTop: hp(-4.5) }} />
+                    <ShimmerPlaceholder
+                      location={[0.3, 0.5, 0.7, 0.9]}
+                      isReversed={isEnglish}
+                      style={{ width: wp(70), height: hp(2), left: wp(2.5), fontSize: wp(5), marginTop: hp(-4.5) }}
+                    />
                   </View>
                 </Animatable.View>
               )}

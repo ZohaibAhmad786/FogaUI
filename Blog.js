@@ -21,9 +21,11 @@ const Blog = (props) => {
         <ScrollView contentContainerStyle={{ backgroundColor: "white" }} nestedScrollEnabled={false}>
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
             duration={300}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(100),
                 height: hp(34.5),
@@ -44,6 +46,8 @@ const Blog = (props) => {
               elevation: 2,
             }}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(15),
                 height: hp(2.3),
@@ -53,6 +57,8 @@ const Blog = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(18),
                 height: hp(2.3),
@@ -62,6 +68,8 @@ const Blog = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(45),
                 height: hp(2.3),
@@ -71,7 +79,7 @@ const Blog = (props) => {
               }}
             />
           </View>
-          {/* <ShimmerPlaceholder
+          {/* <ShimmerPlaceholder  location={[0.3,0.5,0.7,0.9]}   isReversed={isEnglish}
               style={{
                 width: wp(65),
                 height: hp(1.6),
@@ -82,9 +90,11 @@ const Blog = (props) => {
             /> */}
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
             duration={300}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(93),
                 height: hp(26),
@@ -98,9 +108,11 @@ const Blog = (props) => {
           </Animatable.View>
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
             duration={300}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(87),
                 height: hp(3.8),
@@ -112,6 +124,8 @@ const Blog = (props) => {
           </Animatable.View>
           <View style={{ flexDirection: "row" }}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(35),
                 height: hp(2.4),
@@ -121,6 +135,8 @@ const Blog = (props) => {
               }}
             />
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 width: wp(45),
                 height: hp(2.2),
@@ -131,6 +147,8 @@ const Blog = (props) => {
             />
           </View>
           <ShimmerPlaceholder
+            location={[0.3, 0.5, 0.7, 0.9]}
+            isReversed={isEnglish}
             style={{
               width: wp(88),
               height: hp(2),
@@ -140,6 +158,8 @@ const Blog = (props) => {
             }}
           />
           <ShimmerPlaceholder
+            location={[0.3, 0.5, 0.7, 0.9]}
+            isReversed={isEnglish}
             style={{
               width: wp(90),
               height: hp(2),
@@ -149,6 +169,8 @@ const Blog = (props) => {
             }}
           />
           <ShimmerPlaceholder
+            location={[0.3, 0.5, 0.7, 0.9]}
+            isReversed={isEnglish}
             style={{
               width: wp(91),
               height: hp(2),
@@ -158,6 +180,8 @@ const Blog = (props) => {
             }}
           />
           <ShimmerPlaceholder
+            location={[0.3, 0.5, 0.7, 0.9]}
+            isReversed={isEnglish}
             style={{
               width: wp(89),
               height: hp(2),
@@ -167,6 +191,8 @@ const Blog = (props) => {
             }}
           />
           <ShimmerPlaceholder
+            location={[0.3, 0.5, 0.7, 0.9]}
+            isReversed={isEnglish}
             style={{
               width: wp(88),
               height: hp(2),
@@ -176,6 +202,8 @@ const Blog = (props) => {
             }}
           />
           <ShimmerPlaceholder
+            location={[0.3, 0.5, 0.7, 0.9]}
+            isReversed={isEnglish}
             style={{
               width: wp(91),
               height: hp(2),
@@ -185,6 +213,8 @@ const Blog = (props) => {
             }}
           />
           <ShimmerPlaceholder
+            location={[0.3, 0.5, 0.7, 0.9]}
+            isReversed={isEnglish}
             style={{
               width: wp(89),
               height: hp(2),
@@ -194,6 +224,8 @@ const Blog = (props) => {
             }}
           />
           <ShimmerPlaceholder
+            location={[0.3, 0.5, 0.7, 0.9]}
+            isReversed={isEnglish}
             style={{
               width: wp(91),
               height: hp(2),
@@ -203,6 +235,8 @@ const Blog = (props) => {
             }}
           />
           <ShimmerPlaceholder
+            location={[0.3, 0.5, 0.7, 0.9]}
+            isReversed={isEnglish}
             style={{
               width: wp(88),
               height: hp(2),
@@ -212,6 +246,8 @@ const Blog = (props) => {
             }}
           />
           <ShimmerPlaceholder
+            location={[0.3, 0.5, 0.7, 0.9]}
+            isReversed={isEnglish}
             style={{
               width: wp(85),
               height: hp(2),
@@ -221,6 +257,8 @@ const Blog = (props) => {
             }}
           />
           <ShimmerPlaceholder
+            location={[0.3, 0.5, 0.7, 0.9]}
+            isReversed={isEnglish}
             style={{
               width: wp(90),
               height: hp(2),
@@ -230,6 +268,8 @@ const Blog = (props) => {
             }}
           />
           <ShimmerPlaceholder
+            location={[0.3, 0.5, 0.7, 0.9]}
+            isReversed={isEnglish}
             style={{
               width: wp(89),
               height: hp(2),
@@ -239,6 +279,8 @@ const Blog = (props) => {
             }}
           />
           <ShimmerPlaceholder
+            location={[0.3, 0.5, 0.7, 0.9]}
+            isReversed={isEnglish}
             style={{
               width: wp(91),
               height: hp(2),
@@ -248,6 +290,8 @@ const Blog = (props) => {
             }}
           />
           <ShimmerPlaceholder
+            location={[0.3, 0.5, 0.7, 0.9]}
+            isReversed={isEnglish}
             style={{
               width: wp(89),
               height: hp(2),
@@ -257,6 +301,8 @@ const Blog = (props) => {
             }}
           />
           <ShimmerPlaceholder
+            location={[0.3, 0.5, 0.7, 0.9]}
+            isReversed={isEnglish}
             style={{
               width: wp(25),
               height: hp(2),

@@ -18,12 +18,14 @@ const FeedSkeleton = (props) => {
   return (
     <>
       <View style={{ height: hp(100), width: wp(100) }}>
-        <ScrollView contentContainerStyle={{ backgroundColor: "#fff", }} nestedScrollEnabled={false}>
+        <ScrollView contentContainerStyle={{ backgroundColor: "#fff" }} nestedScrollEnabled={false}>
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
             duration={500}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 overflow: "hidden",
                 backgroundColor: "#000",
@@ -35,14 +37,14 @@ const FeedSkeleton = (props) => {
           {/* hoizontal carousal */}
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
             duration={500}
             style={styles.owlCraousel}>
             <FlatList
               horizontal
               data={dummyData}
               keyExtractor={(item) => item.toString()}
-              renderItem={({ item, index }) => <ShimmerPlaceholder speed={500} style={styles.effect} />}
+              renderItem={({ item, index }) => <ShimmerPlaceholder location={[0.3, 0.5, 0.7, 0.9]} isReversed={isEnglish} speed={500} style={styles.effect} />}
             />
           </Animatable.View>
 
@@ -53,7 +55,7 @@ const FeedSkeleton = (props) => {
                 flexDirection: "row",
                 alignItems: "center",
                 justifyContent: "space-between",
-                width: "96%", 
+                width: "96%",
               }}>
               <View style={{ width: wp(80) }}>
                 <Text style={{ fontWeight: "bold", fontSize: hp(3), color: "#444444" }}>Tours</Text>
@@ -73,12 +75,12 @@ const FeedSkeleton = (props) => {
               renderItem={({ item, index }) => (
                 <Animatable.View
                   useNativeDriver
-                  animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
+                  animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
                   duration={500}
                   style={[
                     {
-                      marginTop:-15,
-                      marginRight: 30 ,
+                      marginTop: -15,
+                      marginRight: 30,
                       width: wp(81.5),
                       height: hp(35),
                       borderRadius: 15,
@@ -100,6 +102,7 @@ const FeedSkeleton = (props) => {
                       width: "100%",
                     }}>
                     <ShimmerPlaceholder
+                      location={[0.3, 0.5, 0.7, 0.9]}
                       style={{
                         height: "100%",
                         width: "100%",
@@ -112,29 +115,34 @@ const FeedSkeleton = (props) => {
                       width: "100%",
                       justifyContent: "center",
                     }}>
-                    <ShimmerPlaceholder style={{ position: "absolute", top: wp(2), left: wp(2.5), fontSize: wp(5) }} />
+                    <ShimmerPlaceholder
+                      location={[0.3, 0.5, 0.7, 0.9]}
+                      isReversed={isEnglish}
+                      style={{ position: "absolute", top: wp(2), left: wp(2.5), fontSize: wp(5) }}
+                    />
 
-                    {/* <ShimmerPlaceholder style={{ height: 20, width: "60%" }} /> */}
+                    {/* <ShimmerPlaceholder  location={[0.3,0.5,0.7,0.9]}     isReversed={isEnglish} style={{ height: 20, width: "60%" }} /> */}
                   </View>
                 </Animatable.View>
               )}
             />
           </View>
 
-          <View style={[styles.tripsListCraousel, { justifyContent: "space-around", width: windowWidth  }]}>
+          <View style={[styles.tripsListCraousel, { justifyContent: "space-around", width: windowWidth }]}>
             <View
               style={{
                 flexDirection: "row",
                 alignItems: "flex-end",
                 justifyContent: "space-between",
-                width: "96%", marginTop:wp(1)
+                width: "96%",
+                marginTop: wp(1),
               }}>
-              <Text style={{ fontWeight: "bold", fontSize: hp(3.5), color: "#444444",width: wp(80) }}>Our best promotion boats</Text>
+              <Text style={{ fontWeight: "bold", fontSize: hp(3.5), color: "#444444", width: wp(80) }}>Our best promotion boats</Text>
               <TouchableOpacity onPress={() => {}}>
                 <Text style={{ fontWeight: "bold", fontSize: 12, color: "#000", marginBottom: hp(5) }}>View All</Text>
               </TouchableOpacity>
             </View>
-            <View style={[{ alignItems: "center",marginTop:hp(2.5), }]}>
+            <View style={[{ alignItems: "center", marginTop: hp(2.5) }]}>
               <FlatList
                 horizontal
                 data={dummyData}
@@ -142,7 +150,7 @@ const FeedSkeleton = (props) => {
                 renderItem={({ item, index }) => (
                   <Animatable.View
                     useNativeDriver
-                    animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
+                    animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
                     duration={500}
                     style={[
                       {
@@ -170,6 +178,7 @@ const FeedSkeleton = (props) => {
                         width: "100%",
                       }}>
                       <ShimmerPlaceholder
+                        location={[0.3, 0.5, 0.7, 0.9]}
                         style={{
                           height: "100%",
                           width: "100%",
@@ -180,10 +189,14 @@ const FeedSkeleton = (props) => {
                       style={{
                         height: "23%",
                         width: "100%",
-                        justifyContent: "center" 
+                        justifyContent: "center",
                       }}>
-                      <ShimmerPlaceholder style={{ position: "absolute", top: wp(2), left: wp(2.5), fontSize: wp(5) }} />
-                      {/* <ShimmerPlaceholder speed={500}>
+                      <ShimmerPlaceholder
+                        location={[0.3, 0.5, 0.7, 0.9]}
+                        isReversed={isEnglish}
+                        style={{ position: "absolute", top: wp(2), left: wp(2.5), fontSize: wp(5) }}
+                      />
+                      {/* <ShimmerPlaceholder  location={[0.3,0.5,0.7,0.9]}     isReversed={isEnglish} speed={500}>
                       <View style={{ height: 30, width: "60%" }} />
                     </ShimmerPlaceholder> */}
                     </View>
@@ -212,7 +225,7 @@ const FeedSkeleton = (props) => {
                 renderItem={({ item, index }) => (
                   <Animatable.View
                     useNativeDriver
-                    animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
+                    animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
                     duration={500}
                     style={[
                       {
@@ -231,6 +244,7 @@ const FeedSkeleton = (props) => {
                         width: wp(100),
                       }}>
                       <ShimmerPlaceholder
+                        location={[0.3, 0.5, 0.7, 0.9]}
                         style={{
                           height: "100%",
                           width: "100%",
@@ -242,9 +256,17 @@ const FeedSkeleton = (props) => {
                         height: "40%",
                         width: "100%",
                       }}>
-                      <ShimmerPlaceholder style={{ height: hp(3), width: "60%", marginLeft: wp(3), marginTop: wp(4) }} />
+                      <ShimmerPlaceholder
+                        location={[0.3, 0.5, 0.7, 0.9]}
+                        isReversed={isEnglish}
+                        style={{ height: hp(3), width: "60%", marginLeft: wp(3), marginTop: wp(4) }}
+                      />
 
-                      <ShimmerPlaceholder style={{ height: hp(2), width: "100%", marginLeft: wp(3), marginTop: wp(4) }} />
+                      <ShimmerPlaceholder
+                        location={[0.3, 0.5, 0.7, 0.9]}
+                        isReversed={isEnglish}
+                        style={{ height: hp(2), width: "100%", marginLeft: wp(3), marginTop: wp(4) }}
+                      />
                     </View>
                   </Animatable.View>
                 )}

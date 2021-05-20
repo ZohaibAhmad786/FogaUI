@@ -21,9 +21,11 @@ const ViewAll = (props) => {
         <ScrollView contentContainerStyle={{ backgroundColor: "white", paddingVertical: hp(4) }} nestedScrollEnabled={false}>
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
             duration={300}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(90),
@@ -38,9 +40,11 @@ const ViewAll = (props) => {
 
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
             duration={300}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(43),
@@ -53,9 +57,11 @@ const ViewAll = (props) => {
           </Animatable.View>
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
             duration={300}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(61),
@@ -70,7 +76,7 @@ const ViewAll = (props) => {
           {/* vertical trips list */}
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
             duration={300}
             style={{ marginTop: hp(-1) }}>
             <FlatList
@@ -82,12 +88,12 @@ const ViewAll = (props) => {
                 //   alignSelf: 'center', borderRadius: hp(2),flexDirection: 'row',
                 //   shadowColor: "#000", shadowOffset: { width: 0,height: 1,},
                 //   shadowOpacity: 0.2,shadowRadius: 1.41,elevation: 3, alignItems: 'center' }}>
-                //       <ShimmerPlaceholder style = {{width: wp(90),height:hp(30), backgroundColor: 'grey',
+                //       <ShimmerPlaceholder  location={[0.3,0.5,0.7,0.9]}   isReversed={isEnglish} style = {{width: wp(90),height:hp(30), backgroundColor: 'grey',
                 //       borderRadius: hp(1.6)}} />
                 //    </View>
                 <Animatable.View
                   useNativeDriver
-                  animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
+                  animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
                   duration={700}
                   style={[
                     {
@@ -112,6 +118,8 @@ const ViewAll = (props) => {
                       width: "100%",
                     }}>
                     <ShimmerPlaceholder
+                      location={[0.3, 0.5, 0.7, 0.9]}
+                      isReversed={isEnglish}
                       style={{
                         height: "100%",
                         width: "100%",
@@ -124,7 +132,11 @@ const ViewAll = (props) => {
                       width: "100%",
                       justifyContent: "center",
                     }}>
-                    <ShimmerPlaceholder style={{ width: wp(70), height: hp(2), left: wp(2.5), fontSize: wp(5),marginTop: hp(-4.5) }} />
+                    <ShimmerPlaceholder
+                      location={[0.3, 0.5, 0.7, 0.9]}
+                      isReversed={isEnglish}
+                      style={{ width: wp(70), height: hp(2), left: wp(2.5), fontSize: wp(5), marginTop: hp(-4.5) }}
+                    />
                   </View>
                 </Animatable.View>
               )}

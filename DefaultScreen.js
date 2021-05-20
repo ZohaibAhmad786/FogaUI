@@ -17,625 +17,739 @@ const DefaultScreen = (props) => {
   return (
     <>
       <View style={{ height: hp(100), width: wp(100) }}>
-      <ScrollView contentContainerStyle={{ backgroundColor: "white", paddingVertical: hp(4) }} nestedScrollEnabled={false}>
-      <Animatable.View
+        <ScrollView contentContainerStyle={{ backgroundColor: "white", paddingVertical: hp(4) }} nestedScrollEnabled={false}>
+          <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
-            duration={300} style={{flexDirection: 'row',
-                marginBottom: hp(-1)
-            }}>
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
+            duration={300}
+            style={{ flexDirection: "row", marginBottom: hp(-1) }}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(56),
                 height: hp(3),
                 marginLeft: wp(3.5),
-                justifyContent: "center",marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
-             <ShimmerPlaceholder
+            <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(34),
                 height: hp(3),
                 marginLeft: wp(1),
-                justifyContent: "center", marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
           </Animatable.View>
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
-            duration={300} style={{flexDirection: 'row',
-                marginBottom: hp(-1)
-            }}>
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
+            duration={300}
+            style={{ flexDirection: "row", marginBottom: hp(-1) }}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(68),
                 height: hp(3),
                 marginLeft: wp(3.5),
-                justifyContent: "center",marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
-             <ShimmerPlaceholder
+            <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(22),
                 height: hp(3),
                 marginLeft: wp(1),
-                justifyContent: "center", marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
           </Animatable.View>
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
-            duration={300} style={{flexDirection: 'row',
-                marginBottom: hp(-1)
-            }}>
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
+            duration={300}
+            style={{ flexDirection: "row", marginBottom: hp(-1) }}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(46),
                 height: hp(3),
                 marginLeft: wp(3.5),
-                justifyContent: "center",marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
-             <ShimmerPlaceholder
+            <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(44),
                 height: hp(3),
                 marginLeft: wp(1),
-                justifyContent: "center", marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
           </Animatable.View>
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
-            duration={300} style={{flexDirection: 'row'}}>
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
+            duration={300}
+            style={{ flexDirection: "row" }}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(36),
                 height: hp(3),
                 marginLeft: wp(3.5),
                 justifyContent: "center",
-                marginTop: hp(2)
+                marginTop: hp(2),
               }}
             />
-             <ShimmerPlaceholder
+            <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(54),
                 height: hp(3),
                 marginLeft: wp(1),
                 justifyContent: "center",
-                marginTop: hp(2)
+                marginTop: hp(2),
               }}
             />
           </Animatable.View>
 
-                                                     {/* group2 */}
-
+          {/* group2 */}
 
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
-            duration={300} style={{flexDirection: 'row',
-                marginBottom: hp(-1),marginTop:hp(-1)
-            }}>
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
+            duration={300}
+            style={{ flexDirection: "row", marginBottom: hp(-1), marginTop: hp(-1) }}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(56),
                 height: hp(3),
                 marginLeft: wp(3.5),
-                justifyContent: "center",marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
-             <ShimmerPlaceholder
+            <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(34),
                 height: hp(3),
                 marginLeft: wp(1),
-                justifyContent: "center", marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
           </Animatable.View>
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
-            duration={300} style={{flexDirection: 'row',
-                marginBottom: hp(-1)
-            }}>
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
+            duration={300}
+            style={{ flexDirection: "row", marginBottom: hp(-1) }}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(68),
                 height: hp(3),
                 marginLeft: wp(3.5),
-                justifyContent: "center",marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
-             <ShimmerPlaceholder
+            <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(22),
                 height: hp(3),
                 marginLeft: wp(1),
-                justifyContent: "center", marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
           </Animatable.View>
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
-            duration={300} style={{flexDirection: 'row',
-                marginBottom: hp(-1)
-            }}>
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
+            duration={300}
+            style={{ flexDirection: "row", marginBottom: hp(-1) }}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(46),
                 height: hp(3),
                 marginLeft: wp(3.5),
-                justifyContent: "center",marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
-             <ShimmerPlaceholder
+            <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(44),
                 height: hp(3),
                 marginLeft: wp(1),
-                justifyContent: "center", marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
           </Animatable.View>
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
-            duration={300} style={{flexDirection: 'row'}}>
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
+            duration={300}
+            style={{ flexDirection: "row" }}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(36),
                 height: hp(3),
                 marginLeft: wp(3.5),
                 justifyContent: "center",
-                marginTop: hp(2)
+                marginTop: hp(2),
               }}
             />
-             <ShimmerPlaceholder
+            <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(54),
                 height: hp(3),
                 marginLeft: wp(1),
                 justifyContent: "center",
-                marginTop: hp(2)
+                marginTop: hp(2),
               }}
             />
           </Animatable.View>
 
+          {/* group3 */}
 
-                                                 {/* group3 */}
-
-                                                 <Animatable.View
+          <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
-            duration={300} style={{flexDirection: 'row',
-                marginBottom: hp(-1),marginTop:hp(-1)
-            }}>
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
+            duration={300}
+            style={{ flexDirection: "row", marginBottom: hp(-1), marginTop: hp(-1) }}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(56),
                 height: hp(3),
                 marginLeft: wp(3.5),
-                justifyContent: "center",marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
-             <ShimmerPlaceholder
+            <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(34),
                 height: hp(3),
                 marginLeft: wp(1),
-                justifyContent: "center", marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
           </Animatable.View>
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
-            duration={300} style={{flexDirection: 'row',
-                marginBottom: hp(-1)
-            }}>
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
+            duration={300}
+            style={{ flexDirection: "row", marginBottom: hp(-1) }}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(68),
                 height: hp(3),
                 marginLeft: wp(3.5),
-                justifyContent: "center",marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
-             <ShimmerPlaceholder
+            <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(22),
                 height: hp(3),
                 marginLeft: wp(1),
-                justifyContent: "center", marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
           </Animatable.View>
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
-            duration={300} style={{flexDirection: 'row',
-                marginBottom: hp(-1)
-            }}>
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
+            duration={300}
+            style={{ flexDirection: "row", marginBottom: hp(-1) }}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(46),
                 height: hp(3),
                 marginLeft: wp(3.5),
-                justifyContent: "center",marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
-             <ShimmerPlaceholder
+            <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(44),
                 height: hp(3),
                 marginLeft: wp(1),
-                justifyContent: "center", marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
           </Animatable.View>
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
-            duration={300} style={{flexDirection: 'row'}}>
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
+            duration={300}
+            style={{ flexDirection: "row" }}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(36),
                 height: hp(3),
                 marginLeft: wp(3.5),
                 justifyContent: "center",
-                marginTop: hp(2)
+                marginTop: hp(2),
               }}
             />
-             <ShimmerPlaceholder
+            <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(54),
                 height: hp(3),
                 marginLeft: wp(1),
                 justifyContent: "center",
-                marginTop: hp(2)
+                marginTop: hp(2),
               }}
             />
           </Animatable.View>
 
-                        {/* group4 */}
+          {/* group4 */}
 
-                        <Animatable.View
+          <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
-            duration={300} style={{flexDirection: 'row',
-                marginBottom: hp(-1),marginTop:hp(-1)
-            }}>
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
+            duration={300}
+            style={{ flexDirection: "row", marginBottom: hp(-1), marginTop: hp(-1) }}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(56),
                 height: hp(3),
                 marginLeft: wp(3.5),
-                justifyContent: "center",marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
-             <ShimmerPlaceholder
+            <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(34),
                 height: hp(3),
                 marginLeft: wp(1),
-                justifyContent: "center", marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
           </Animatable.View>
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
-            duration={300} style={{flexDirection: 'row',
-                marginBottom: hp(-1)
-            }}>
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
+            duration={300}
+            style={{ flexDirection: "row", marginBottom: hp(-1) }}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(68),
                 height: hp(3),
                 marginLeft: wp(3.5),
-                justifyContent: "center",marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
-             <ShimmerPlaceholder
+            <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(22),
                 height: hp(3),
                 marginLeft: wp(1),
-                justifyContent: "center", marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
           </Animatable.View>
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
-            duration={300} style={{flexDirection: 'row',
-                marginBottom: hp(-1)
-            }}>
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
+            duration={300}
+            style={{ flexDirection: "row", marginBottom: hp(-1) }}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(46),
                 height: hp(3),
                 marginLeft: wp(3.5),
-                justifyContent: "center",marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
-             <ShimmerPlaceholder
+            <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(44),
                 height: hp(3),
                 marginLeft: wp(1),
-                justifyContent: "center", marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
           </Animatable.View>
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
-            duration={300} style={{flexDirection: 'row'}}>
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
+            duration={300}
+            style={{ flexDirection: "row" }}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(36),
                 height: hp(3),
                 marginLeft: wp(3.5),
                 justifyContent: "center",
-                marginTop: hp(2)
+                marginTop: hp(2),
               }}
             />
-             <ShimmerPlaceholder
+            <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(54),
                 height: hp(3),
                 marginLeft: wp(1),
                 justifyContent: "center",
-                marginTop: hp(2)
+                marginTop: hp(2),
               }}
             />
           </Animatable.View>
 
+          {/* group5 */}
 
-                                {/* group5 */}
-
-                                <Animatable.View
+          <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
-            duration={300} style={{flexDirection: 'row',
-                marginBottom: hp(-1),marginTop:hp(-1)
-            }}>
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
+            duration={300}
+            style={{ flexDirection: "row", marginBottom: hp(-1), marginTop: hp(-1) }}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(56),
                 height: hp(3),
                 marginLeft: wp(3.5),
-                justifyContent: "center",marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
-             <ShimmerPlaceholder
+            <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(34),
                 height: hp(3),
                 marginLeft: wp(1),
-                justifyContent: "center", marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
           </Animatable.View>
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
-            duration={300} style={{flexDirection: 'row',
-                marginBottom: hp(-1)
-            }}>
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
+            duration={300}
+            style={{ flexDirection: "row", marginBottom: hp(-1) }}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(68),
                 height: hp(3),
                 marginLeft: wp(3.5),
-                justifyContent: "center",marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
-             <ShimmerPlaceholder
+            <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(22),
                 height: hp(3),
                 marginLeft: wp(1),
-                justifyContent: "center", marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
           </Animatable.View>
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
-            duration={300} style={{flexDirection: 'row',
-                marginBottom: hp(-1)
-            }}>
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
+            duration={300}
+            style={{ flexDirection: "row", marginBottom: hp(-1) }}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(46),
                 height: hp(3),
                 marginLeft: wp(3.5),
-                justifyContent: "center",marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
-             <ShimmerPlaceholder
+            <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(44),
                 height: hp(3),
                 marginLeft: wp(1),
-                justifyContent: "center", marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
           </Animatable.View>
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
-            duration={300} style={{flexDirection: 'row'}}>
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
+            duration={300}
+            style={{ flexDirection: "row" }}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(36),
                 height: hp(3),
                 marginLeft: wp(3.5),
                 justifyContent: "center",
-                marginTop: hp(2)
+                marginTop: hp(2),
               }}
             />
-             <ShimmerPlaceholder
+            <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(54),
                 height: hp(3),
                 marginLeft: wp(1),
                 justifyContent: "center",
-                marginTop: hp(2)
+                marginTop: hp(2),
               }}
             />
           </Animatable.View>
 
-
-                                                {/* group7 */}
-
-
+          {/* group7 */}
 
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
-            duration={300} style={{flexDirection: 'row',
-                marginBottom: hp(-1),marginTop:hp(-1)
-            }}>
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
+            duration={300}
+            style={{ flexDirection: "row", marginBottom: hp(-1), marginTop: hp(-1) }}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(56),
                 height: hp(3),
                 marginLeft: wp(3.5),
-                justifyContent: "center",marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
-             <ShimmerPlaceholder
+            <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(34),
                 height: hp(3),
                 marginLeft: wp(1),
-                justifyContent: "center", marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
           </Animatable.View>
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
-            duration={300} style={{flexDirection: 'row',
-                marginBottom: hp(-1)
-            }}>
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
+            duration={300}
+            style={{ flexDirection: "row", marginBottom: hp(-1) }}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(68),
                 height: hp(3),
                 marginLeft: wp(3.5),
-                justifyContent: "center",marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
-             <ShimmerPlaceholder
+            <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(22),
                 height: hp(3),
                 marginLeft: wp(1),
-                justifyContent: "center", marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
           </Animatable.View>
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
-            duration={300} style={{flexDirection: 'row',
-                marginBottom: hp(-1)
-            }}>
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
+            duration={300}
+            style={{ flexDirection: "row", marginBottom: hp(-1) }}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(46),
                 height: hp(3),
                 marginLeft: wp(3.5),
-                justifyContent: "center",marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
-             <ShimmerPlaceholder
+            <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(44),
                 height: hp(3),
                 marginLeft: wp(1),
-                justifyContent: "center", marginTop: hp(2)
+                justifyContent: "center",
+                marginTop: hp(2),
               }}
             />
           </Animatable.View>
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
-            duration={300} style={{flexDirection: 'row'}}>
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
+            duration={300}
+            style={{ flexDirection: "row" }}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(36),
                 height: hp(3),
                 marginLeft: wp(3.5),
                 justifyContent: "center",
-                marginTop: hp(2)
+                marginTop: hp(2),
               }}
             />
-             <ShimmerPlaceholder
+            <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(54),
                 height: hp(3),
                 marginLeft: wp(1),
                 justifyContent: "center",
-                marginTop: hp(2)
+                marginTop: hp(2),
               }}
             />
           </Animatable.View>

@@ -21,9 +21,11 @@ const ViewAllTrips = (props) => {
         <ScrollView contentContainerStyle={{ backgroundColor: "white", paddingVertical: hp(4) }} nestedScrollEnabled={false}>
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
             duration={300}>
             <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
               style={{
                 backgroundColor: "blue",
                 width: wp(90),
@@ -39,7 +41,7 @@ const ViewAllTrips = (props) => {
           {/* vertical trips list */}
           <Animatable.View
             useNativeDriver
-            animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
+            animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
             duration={300}
             style={{ marginTop: hp(1) }}>
             <FlatList
@@ -64,13 +66,19 @@ const ViewAllTrips = (props) => {
                     alignItems: "center",
                   }}>
                   <ShimmerPlaceholder
+                    location={[0.3, 0.5, 0.7, 0.9]}
+                    isReversed={isEnglish}
                     style={{ width: wp(47), height: hp(22.9), backgroundColor: "grey", marginVertical: hp(0.5), marginLeft: wp(1), borderRadius: hp(1.6) }}
                   />
                   <View style={{ width: wp(47), height: hp(23) }}>
                     <ShimmerPlaceholder
+                      location={[0.3, 0.5, 0.7, 0.9]}
+                      isReversed={isEnglish}
                       style={{ width: wp(32), height: hp(3), backgroundColor: "grey", marginTop: hp(1), marginHorizontal: wp(3), justifyContent: "center" }}
                     />
                     <ShimmerPlaceholder
+                      location={[0.3, 0.5, 0.7, 0.9]}
+                      isReversed={isEnglish}
                       style={{
                         width: wp(36),
                         height: hp(14),

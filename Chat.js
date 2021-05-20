@@ -9,7 +9,7 @@ import {
   removeOrientationListener as rol,
 } from "react-native-responsive-screen";
 import { Ionicons } from "@expo/vector-icons";
-import { AntDesign,FontAwesome } from "@expo/vector-icons";
+import { AntDesign, FontAwesome } from "@expo/vector-icons";
 
 const Chat = (props) => {
   const { canGoForward, isEnglish } = props;
@@ -17,12 +17,13 @@ const Chat = (props) => {
     <View style={{ height: hp(100), width: wp(100), backgroundColor: "#F5F7F9" }}>
       <Animatable.View
         useNativeDriver={true}
-        animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
+        animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
         duration={1000}
         style={{ height: hp(25), backgroundColor: "#FAFAFF", paddingHorizontal: wp(5), paddingTop: wp(4) }}>
         <View
           style={{
-            height: hp(5.4),marginTop:hp(2),
+            height: hp(5.4),
+            marginTop: hp(2),
             backgroundColor: "#fff",
             shadowColor: "#000",
             shadowOffset: {
@@ -39,17 +40,18 @@ const Chat = (props) => {
           }}>
           <Ionicons name='arrow-back' size={wp(6.5)} color='#2180F3' />
           <View style={{ height: wp(8), width: wp(8), borderRadius: wp(4), marginHorizontal: wp(3), backgroundColor: "#cecece" }} />
-          <Text style={{ color: "#606679" ,fontWeight: 'bold'}}>Messenger</Text>
+          <Text style={{ color: "#606679", fontWeight: "bold" }}>Messenger</Text>
           <View style={{ position: "absolute", left: wp(71) }}>
             <FontAwesome name='home' size={wp(5)} color='#2180F3' />
           </View>
           <View style={{ position: "absolute", right: wp(6) }}>
             <AntDesign name='infocirlce' size={wp(5)} color='#2180F3' />
           </View>
-         
         </View>
 
         <ShimmerPlaceholder
+          location={[0.3, 0.5, 0.7, 0.9]}
+          isReversed={isEnglish}
           style={{
             height: hp(2.8),
             width: "85%",
@@ -59,6 +61,8 @@ const Chat = (props) => {
           }}
         />
         <ShimmerPlaceholder
+          location={[0.3, 0.5, 0.7, 0.9]}
+          isReversed={isEnglish}
           style={{
             height: hp(10),
             width: wp(95),
@@ -68,6 +72,8 @@ const Chat = (props) => {
           }}
         />
         <ShimmerPlaceholder
+          location={[0.3, 0.5, 0.7, 0.9]}
+          isReversed={isEnglish}
           style={{
             height: hp(10),
             width: wp(95),
@@ -77,6 +83,8 @@ const Chat = (props) => {
           }}
         />
         <ShimmerPlaceholder
+          location={[0.3, 0.5, 0.7, 0.9]}
+          isReversed={isEnglish}
           style={{
             height: hp(10),
             width: wp(95),
@@ -86,6 +94,8 @@ const Chat = (props) => {
           }}
         />
         <ShimmerPlaceholder
+          location={[0.3, 0.5, 0.7, 0.9]}
+          isReversed={isEnglish}
           style={{
             height: hp(10),
             width: wp(95),
@@ -95,6 +105,8 @@ const Chat = (props) => {
           }}
         />
         <ShimmerPlaceholder
+          location={[0.3, 0.5, 0.7, 0.9]}
+          isReversed={isEnglish}
           style={{
             height: hp(10),
             width: wp(95),
@@ -104,6 +116,8 @@ const Chat = (props) => {
           }}
         />
         <ShimmerPlaceholder
+          location={[0.3, 0.5, 0.7, 0.9]}
+          isReversed={isEnglish}
           style={{
             height: hp(10),
             width: wp(95),
@@ -113,6 +127,8 @@ const Chat = (props) => {
           }}
         />
         <ShimmerPlaceholder
+          location={[0.3, 0.5, 0.7, 0.9]}
+          isReversed={isEnglish}
           style={{
             height: hp(10),
             width: wp(95),
@@ -122,6 +138,8 @@ const Chat = (props) => {
           }}
         />
         <ShimmerPlaceholder
+          location={[0.3, 0.5, 0.7, 0.9]}
+          isReversed={isEnglish}
           style={{
             height: hp(10),
             width: wp(95),

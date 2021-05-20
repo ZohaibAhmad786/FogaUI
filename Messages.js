@@ -16,20 +16,32 @@ const Messages = (props) => {
       <ScrollView contentContainerStyle={{ backgroundColor: "white", paddingHorizontal: wp(2), paddingBottom: hp(2) }} nestedScrollEnabled={false}>
         <Animatable.View
           useNativeDriver={true}
-          animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
+          animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
           duration={1000}
           style={{ marginTop: hp(7), paddingLeft: wp(2) }}>
           <Text style={{ fontSize: hp(6), color: "#00AEEF", fontWeight: "980" }}>All Notifications</Text>
         </Animatable.View>
         <Animatable.View
           useNativeDriver={true}
-          animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
+          animation={canGoForward ? (!isEnglish ? "slideInLeft" : "slideInRight") : !isEnglish ? "slideInRight" : "slideInLeft"}
           duration={1000}
           style={{ flexDirection: "row", alignItems: "flex-start", justifyContent: "space-between", marginTop: hp(0), borderRadius: wp(1) }}>
           <View style={{ width: wp(18) }}>
-            <ShimmerPlaceholder style={{ height: hp(8), width: "100%", marginBottom: wp(1), backgroundColor: "#F4F4F4" }} />
-            <ShimmerPlaceholder style={{ height: hp(8), width: "100%", marginBottom: wp(1), backgroundColor: "#F4F4F4" }} />
-            <ShimmerPlaceholder style={{ height: hp(8), width: "100%", marginBottom: wp(1), backgroundColor: "#F4F4F4" }} />
+            <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
+              style={{ height: hp(8), width: "100%", marginBottom: wp(1), backgroundColor: "#F4F4F4" }}
+            />
+            <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
+              style={{ height: hp(8), width: "100%", marginBottom: wp(1), backgroundColor: "#F4F4F4" }}
+            />
+            <ShimmerPlaceholder
+              location={[0.3, 0.5, 0.7, 0.9]}
+              isReversed={isEnglish}
+              style={{ height: hp(8), width: "100%", marginBottom: wp(1), backgroundColor: "#F4F4F4" }}
+            />
           </View>
           <View style={{ width: wp(72), backgroundColor: "#F4F4F4", paddingBottom: hp(0), borderRadius: wp(1) }}>
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((el, idx) => (
@@ -37,6 +49,8 @@ const Messages = (props) => {
                 <View style={{ height: hp(16), width: "100%", flexDirection: "row", justifyContent: "space-between" }}>
                   <View style={{ width: "30%", alignItems: "center", paddingTop: wp(5) }}>
                     <ShimmerPlaceholder
+                      location={[0.3, 0.5, 0.7, 0.9]}
+                      isReversed={isEnglish}
                       style={{
                         width: wp(10),
                         height: wp(10),
@@ -46,6 +60,8 @@ const Messages = (props) => {
                   </View>
                   <View style={{ width: "70%", paddingTop: wp(5) }}>
                     <ShimmerPlaceholder
+                      location={[0.3, 0.5, 0.7, 0.9]}
+                      isReversed={isEnglish}
                       style={{
                         width: "90%",
                         height: hp(4),
@@ -53,6 +69,8 @@ const Messages = (props) => {
                       }}
                     />
                     <ShimmerPlaceholder
+                      location={[0.3, 0.5, 0.7, 0.9]}
+                      isReversed={isEnglish}
                       style={{
                         width: "90%",
                         height: hp(4),
@@ -60,6 +78,8 @@ const Messages = (props) => {
                       }}
                     />
                     <ShimmerPlaceholder
+                      location={[0.3, 0.5, 0.7, 0.9]}
+                      isReversed={isEnglish}
                       style={{
                         width: "90%",
                         height: hp(2),
