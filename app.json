@@ -8,7 +8,7 @@
     "splash": {
       "image": "./logo.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff" 
+      "backgroundColor": "#ffffff"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -16,14 +16,19 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.zohaibkhan3545.webviewrtc"
+      "bundleIdentifier": "app.foga"
     },
     "android": {
+      "useNextNotificationsApi": true,
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.zohaibkhan3545.webviewrtc"
+      "permissions": ["USER_FACING_NOTIFICATIONS", "NOTIFICATIONS"],
+
+      "googleServicesFile": "./google-services.json",
+      "package": "app.foga"
     },
     "web": {
       "favicon": "./assets/favicon.png"

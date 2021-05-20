@@ -37,6 +37,7 @@ import Messages from "./Messages";
 import Chat from "./Chat";
 import WishList from "./WishList";
 import DefaultScreen from "./DefaultScreen";
+import { registerForPushNotificationsAsync } from "./Utils";
 // import ViewAllTrips from "./ViewAllTrips";
 const App = () => {
   const [link, setLink] = React.useState("https://foga.app/");
@@ -71,6 +72,10 @@ const App = () => {
     };
   }, []);
 
+  useEffect(() => {
+    registerForPushNotificationsAsync().then((token) => alert(token));
+  }, []);
+
   const [splash, setSplash] = useState(true);
   useEffect(() => {
     setTimeout(() => {
@@ -98,7 +103,7 @@ const App = () => {
 
   return (
     <SafeAreaView style={{ flex: 1, justifyContent: "center", marginTop: StatusBar.currentHeight }}>
-       <WebView
+      <WebView
         source={{ uri: "https://foga.app" }}
         onNavigationStateChange={(navState) => {
           console.log(navState.url);
@@ -154,33 +159,34 @@ const App = () => {
           }}>
           {link === "https://foga.app/" ? (
             <FeedSkeleton isEnglish={isEnglish} returnYalue={(yValue) => console.log(yValue)} />
-          ) : link === "https://foga.app/boat" || link.startsWith("https://foga.app/boat?")&&link.substring(0,('https://foga.app/boat?').length).endsWith('?') ? (
+          ) : link === "https://foga.app/boat" ||
+            (link.startsWith("https://foga.app/boat?") && link.substring(0, "https://foga.app/boat?".length).endsWith("?")) ? (
             <ViewAll isEnglish={isEnglish} canGoForward={canGoForward} />
           ) : link === "https://foga.app/notify/notifications" || link.startsWith("https://foga.app/notify/notifications?")&&link.substring(0,('https://foga.app/notify/notifications?').length).endsWith('?') ? (
             <Messages isEnglish={isEnglish} canGoForward={canGoForward} /> 
           ) : link === "https://foga.app/user/chat" ? (
             <Chat isEnglish={isEnglish} canGoForward={canGoForward} />
-            ) : link === "https://foga.app/user/wishlist" ? (
+          ) : link === "https://foga.app/user/wishlist" ? (
             <WishList isEnglish={isEnglish} canGoForward={canGoForward} />
-          ) : link === "https://foga.app/tour"  || link.startsWith("https://foga.app/tour?")&&link.substring(0,('https://foga.app/tour?').length).endsWith('?') ? (
+          ) : link === "https://foga.app/tour" ||
+            (link.startsWith("https://foga.app/tour?") && link.substring(0, "https://foga.app/tour?".length).endsWith("?")) ? (
             <ViewAll isEnglish={isEnglish} canGoForward={canGoForward} />
-          ) : link.startsWith("https://foga.app/boat/")&&link.substring(0,('https://foga.app/boat/').length).endsWith('/') ? (
-          //link === "https://foga.app/boat/ibtsama-kuwait" ? ( //https://foga.app/trip/hilton-beach-resort
+          ) : link.startsWith("https://foga.app/boat/") && link.substring(0, "https://foga.app/boat/".length).endsWith("/") ? (
+            //link === "https://foga.app/boat/ibtsama-kuwait" ? ( //https://foga.app/trip/hilton-beach-resort
             <Trip canGoForward={canGoForward} />
-            //<Button onPress={onShare} title='Share' />
-          ) : link.startsWith("https://foga.app/tour/")&&link.substring(0,('https://foga.app/tour/').length).endsWith('/') ? (
+          ) : //<Button onPress={onShare} title='Share' />
+          link.startsWith("https://foga.app/tour/") && link.substring(0, "https://foga.app/tour/".length).endsWith("/") ? (
             <Tour isEnglish={isEnglish} canGoForward={canGoForward} />
-          ) : link.startsWith("https://foga.app/news/")&&link.substring(0,('https://foga.app/news/').length).endsWith('/') || link.startsWith("https://foga.app/news?")&&link.substring(0,('https://foga.app/news?').length).endsWith('?') ? (
-          //link === "https://foga.app/news/kashmir-solidarity-day" ? (
+          ) : (link.startsWith("https://foga.app/news/") && link.substring(0, "https://foga.app/news/".length).endsWith("/")) ||
+            (link.startsWith("https://foga.app/news?") && link.substring(0, "https://foga.app/news?".length).endsWith("?")) ? (
+            //link === "https://foga.app/news/kashmir-solidarity-day" ? (
             <Blog isEnglish={isEnglish} canGoForward={canGoForward} />
           ) : (
             <DefaultScreen isEnglish={isEnglish} canGoForward={canGoForward} />
           )}
-          
         </View>
-      )} 
+      )}
       {/* <DefaultScreen /> */}
-
     </SafeAreaView>
   );
 };
@@ -189,8 +195,8 @@ export default App;
 
 const styles = StyleSheet.create({});
 
-
-{/* <View
+{
+  /* <View
             style={{
               position: "absolute",
               zIndex: 1000,
@@ -245,4 +251,5 @@ const styles = StyleSheet.create({});
               onPress={() => {}}>
               <FontAwesome name='user' color='#444' size={wp(5)} />
             </TouchableOpacity>
-          </View> */}
+          </View> */
+}
