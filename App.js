@@ -156,7 +156,7 @@ const App = () => {
             <FeedSkeleton isEnglish={isEnglish} returnYalue={(yValue) => console.log(yValue)} />
           ) : link === "https://foga.app/boat" || link.startsWith("https://foga.app/boat?")&&link.substring(0,('https://foga.app/boat?').length).endsWith('?') ? (
             <ViewAll isEnglish={isEnglish} canGoForward={canGoForward} />
-          ) : link === "https://foga.app/notify/notifications" ? (
+          ) : link === "https://foga.app/notify/notifications" || link.startsWith("https://foga.app/notify/notifications?")&&link.substring(0,('https://foga.app/notify/notifications?').length).endsWith('?') ? (
             <Messages isEnglish={isEnglish} canGoForward={canGoForward} /> 
           ) : link === "https://foga.app/user/chat" ? (
             <Chat isEnglish={isEnglish} canGoForward={canGoForward} />

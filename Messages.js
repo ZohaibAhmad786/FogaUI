@@ -18,8 +18,8 @@ const Messages = (props) => {
           useNativeDriver={true}
           animation={canGoForward ? (isEnglish ? "slideInLeft" : "slideInRight") : isEnglish ? "slideInRight" : "slideInLeft"}
           duration={1000}
-          style={{ marginTop: hp(6), paddingLeft: wp(2) }}>
-          <Text style={{ fontSize: hp(6), color: "#00AEEF", fontWeight: "600" }}>All Notifications</Text>
+          style={{ marginTop: hp(7), paddingLeft: wp(2) }}>
+          <Text style={{ fontSize: hp(6), color: "#00AEEF", fontWeight: "980" }}>All Notifications</Text>
         </Animatable.View>
         <Animatable.View
           useNativeDriver={true}

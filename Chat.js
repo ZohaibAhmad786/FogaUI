@@ -22,7 +22,7 @@ const Chat = (props) => {
         style={{ height: hp(25), backgroundColor: "#FAFAFF", paddingHorizontal: wp(5), paddingTop: wp(4) }}>
         <View
           style={{
-            height: hp(5.3),marginTop:hp(2),
+            height: hp(5.4),marginTop:hp(2),
             backgroundColor: "#fff",
             shadowColor: "#000",
             shadowOffset: {
